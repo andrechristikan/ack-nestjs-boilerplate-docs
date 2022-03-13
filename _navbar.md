@@ -1,4 +1,4 @@
-* Translations
+- Translations
 
-  * [English](/)
-  * [Indonesia](/)
+  - [🇬🇧 English](/)
+  - [🇮🇩 Indonesia](/id)
