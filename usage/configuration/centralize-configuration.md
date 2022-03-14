@@ -31,7 +31,7 @@ export class CoreModule {}
 
 ```
 
-## How to use
+## Usage
 
 ### Set default value
 

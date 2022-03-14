@@ -11,11 +11,6 @@
   <!-- Plugins -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
   <style>
-    /* :root {
-      --docsifytabs-border-color: #ededed;
-      --docsifytabs-tab-highlight-color: purple;
-    } */
-
     .jump-to-button{
       display: flex;
       background-color: rgb(255, 255, 255);
@@ -58,9 +53,9 @@
       repo: false,
       maxLevel: 6,
       subMaxLevel: 4,
-      loadNavbar: '_navbar.md',
-      loadSidebar: '_sidebar.md',
-      sidebarDisplayLevel: 0,
+      loadNavbar: 'navbar.md',
+      loadSidebar: 'sidebar.md',
+      sidebarDisplayLevel: 2,
       homepage: 'readme.md',
       auto2top: true,
       hideSidebar: false,
@@ -82,10 +77,10 @@
       },
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
       alias: {
-        '/.*/_navbar.md': '/_navbar.md',
-        '/.*/_sidebar.md': '/_sidebar.md'
+        '/.*/navbar.md': '/navbar.md',
+        '/.*/sidebar.md': '/sidebar.md'
       },
-      coverpage: '_coverpage.md',
+      coverpage: 'coverpage.md',
       notFoundPage:  '_404.md',
       copyCode: {
         buttonText : 'Copy to clipboard',
@@ -96,7 +91,7 @@
         'button-jump-to': {
           template: `
             <div class="jump-to-button" @click="location.href = link">
-              <object type="image/svg+xml" data="_media/file.svg" width="30" height="30"/>
+              <object type="image/svg+xml" data="media/file.svg" width="30" height="30"/>
               <span class="jump-to-button-text">
                 Jump to {{ name }}
               </span>

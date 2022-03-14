@@ -1,8 +1,6 @@
 # Centralize language and Message
 
-## Message Module
-
-`MessageModule` use `I18nModule`. All languages will manage in MessageModule and store into `Global variable` same as `ConfigModule`. It's because we will use it often. Location in `src/message/message.module.ts`
+ack-nestjs-boilerplate-mongoose use `I18nModule` and wrap into `MessageModule`. All languages will manage in MessageModule and store into `Global variable` same as `ConfigModule`. It's because we will use it often. Location in `src/message/message.module.ts`
 
 MessageModule will look like this.
 
