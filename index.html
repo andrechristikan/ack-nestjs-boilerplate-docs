@@ -49,25 +49,46 @@
   <div id="app">Please wait...</div>
   <script>
     window.$docsify = {
-      name: 'ACK Boilerplate Documentation',
+      el: "#app",
       repo: false,
-      maxLevel: 6,
-      subMaxLevel: 4,
-      loadNavbar: 'navbar.md',
-      loadSidebar: 'sidebar.md',
-      sidebarDisplayLevel: 2,
-      homepage: 'readme.md',
-      auto2top: true,
-      hideSidebar: false,
-      relativePath: true,
-      themeColor: '#3F51B5',
       routerMode: 'history',
       mergeNavbar: true,
       noEmoji: false,
       autoHeader: true,
       externalLinkTarget: '_blank',
       topMargin: 90,
-      ext: '.md',
+      executeScript: true,
+
+      // side bar
+      auto2top: true,
+      maxLevel: 6,
+      subMaxLevel: 4,
+      sidebarDisplayLevel: 2,
+      hideSidebar: false,
+
+
+      // theme 
+      name: 'ACK Boilerplate Documentation',
+      loadNavbar: '_navbar.md',
+      loadSidebar: '_sidebar.md',
+      homepage: 'readme.md',
+      themeColor: '#3F51B5',
+      
+      // path
+      relativePath: true,
+      nameLink: {
+        '/': 'ack-nestjs-boilerplate-mongoose/',
+      },
+      alias: {
+        '/.*/_navbar.md': '/_navbar.md'
+      },
+
+      // plugins
+      copyCode: {
+        buttonText : 'Copy to clipboard',
+        errorText  : 'Error',
+        successText: 'Copied'
+      },
       tabs: {
         persist    : true,      // default
         sync       : true,      // default
@@ -75,23 +96,17 @@
         tabComments: true,      // default
         tabHeadings: true       // default
       },
-      formatUpdated: '{MM}/{DD} {HH}:{mm}',
-      alias: {
-        '/.*/navbar.md': '/navbar.md',
-        '/.*/sidebar.md': '/sidebar.md'
-      },
-      coverpage: 'coverpage.md',
+
+      // page
+      coverpage: '_coverpage.md',
       notFoundPage:  '_404.md',
-      copyCode: {
-        buttonText : 'Copy to clipboard',
-        errorText  : 'Error',
-        successText: 'Copied'
-      },
+      
+      // component
       vueComponents: {
         'button-jump-to': {
           template: `
             <div class="jump-to-button" @click="location.href = link">
-              <object type="image/svg+xml" data="media/file.svg" width="30" height="30"/>
+              <object type="image/svg+xml" data="_media/file.svg" width="30" height="30"/>
               <span class="jump-to-button-text">
                 Jump to {{ name }}
               </span>

@@ -1,4 +1,4 @@
-<img src="media/nestjs_logo.svg" alt="nestjs" width="300"/>
+<img src="_media/nestjs_logo.svg" alt="nestjs" width="300"/>
 
 # ACK Boilerplate Documentation
 
