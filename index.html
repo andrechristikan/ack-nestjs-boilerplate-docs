@@ -75,9 +75,12 @@
       themeColor: '#3F51B5',
       
       // path
-      relativePath: true,
+      relativePath: false,
       alias: {
-        '/(.*)/_navbar.md': '/andrechristikan/ack-nestjs-boilerplate-mongoose/_navbar.md'
+          '/.*/_navbar.md': '/_navbar.md',
+      },
+      nameLink: {
+          '/': '#/',
       },
 
       // plugins
