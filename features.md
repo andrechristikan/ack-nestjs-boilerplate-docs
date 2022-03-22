@@ -1,6 +1,6 @@
 # Features
 
-This section will explain some features from **ack-nestjs-boilerplate-mongoose**.
+This section will explain some features.
 
 ## Centralize Configuration
 
@@ -8,18 +8,28 @@ Changing configuration values can be a nightmare for some developers. Perhaps du
 
 Of course, we don't want that to happen, then we need to reduce the mistake. Centralizing our configuration is a recommended solution approach. The configs will be put into one folder or be environment variables for easy maintenance.
 
+### Configs
+
 ```txt
 src
-└── config
-    ├── app.config.ts
-    ├── auth.config.ts
-    ├── ...
-    └── user.config.ts
+  └── config
 ```
+
+### Languages
+
+```txt
+src
+  └── message
+      └── languages 
+          ├── en
+          └── id
+```
+
+<button-jump-to name="Click here to more information " link="/#/usage/configuration/centralize-configuration"></button-jump-to>
 
 ## OAuth2 as Authorization
 
-[OAuth 2.0](reference.md) is the industry-standard protocol for authorization. This is used to describe the user.
+[OAuth 2.0](https://oauth.net/2/) is the industry-standard protocol for authorization. This is used to describe the user.
 
 ack-nestjs-boilerplate-mongoose use JsonWebToken to implement OAuth2, and provide 2 guards for Authorization for admin and for public.
 
@@ -28,11 +38,11 @@ ack-nestjs-boilerplate-mongoose use JsonWebToken to implement OAuth2, and provid
 @AuthAdminJwtGuard()
 ```
 
-More information can be found in _the Reference Section._
+<button-jump-to name="Click here to more information " link="/#/usage/guard/default-auth"></button-jump-to>
 
 ## User, Role and Permission Management
 
-> Inspired by [CASL Package](reference.md) and [NestJs Authorization](reference.md) but we make it more simple.
+> Inspired by [CASL Package](https://casl.js.org/v5/en/) and [NestJs Authorization](https://docs.nestjs.com/security/authorization) but we make it more simple.
 
 We can describe and guard endpoints with specific permissions simply by using `AuthAdminJwtGuard` or `AuthPublicJwtGuard.`
 
@@ -55,6 +65,8 @@ async get(@GetUser() user: IUserDocument): Promise<IResponse> {
     return this.userService.mapGet(user);
 }
 ```
+
+<button-jump-to name="Click here to more information " link="/#/usage/guard/default-auth"></button-jump-to>
 
 ## Advance Validate Income Request
 
@@ -103,6 +115,7 @@ async create(
     ...
 }
 ```
+
 
 ## Advance Mongoose Implementation
 

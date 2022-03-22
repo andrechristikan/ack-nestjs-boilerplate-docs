@@ -10,7 +10,7 @@ Welcome to ACK Boilerplate Documentation. This documentation is for [ack-nestjs-
 
 Let's go into deep ! 🚀
 
-<button-jump-to name="Overview" link="/overview"></button-jump-to>
+<button-jump-to name="Jumpt= To Overview" link="/#/overview"></button-jump-to>
 
 <!-- Repo LINKS -->
 

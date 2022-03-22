@@ -11,4 +11,4 @@
 - Easy to maintenance
 
 [GitHub](https://github.com/andrechristikan/ack-nestjs-boilerplate-mongoose.git)
-[Get Started](#Welcome)
+[Get Started](#welcome)

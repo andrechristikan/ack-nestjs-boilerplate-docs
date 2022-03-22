@@ -7,9 +7,9 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
 
   <!-- Plugins -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
   <style>
     .jump-to-button{
       display: flex;
@@ -51,7 +51,6 @@
     window.$docsify = {
       el: "#app",
       repo: false,
-      routerMode: 'history',
       mergeNavbar: true,
       noEmoji: false,
       autoHeader: true,
@@ -61,10 +60,14 @@
 
       // side bar
       auto2top: true,
-      maxLevel: 6,
-      subMaxLevel: 4,
-      sidebarDisplayLevel: 2,
+      maxLevel: 2,
+      subMaxLevel: 1,
       hideSidebar: false,
+      toc: {
+        scope: '.markdown-section',
+        headings: 'h2, h3',
+        title: 'Table of Contents',
+      },
 
 
       // theme 
@@ -78,9 +81,10 @@
       relativePath: false,
       alias: {
           '/.*/_navbar.md': '/_navbar.md',
+          '/.*/_sidebar.md': '/_sidebar.md',
       },
       nameLink: {
-          '/': '#/',
+          '/': '/#',
       },
 
       // plugins
@@ -105,10 +109,10 @@
       vueComponents: {
         'button-jump-to': {
           template: `
-            <div class="jump-to-button" @click="location.href = link">
+            <div class="jump-to-button" @click="window.location.href=link">
               <object type="image/svg+xml" data="_media/file.svg" width="30" height="30"/>
               <span class="jump-to-button-text">
-                Jump to {{ name }}
+                {{ name }}
               </span>
             </div>
           `,
@@ -121,7 +125,6 @@
 
 
   <!-- Plugins -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
@@ -129,5 +132,6 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
   <script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
 </body>
 </html>

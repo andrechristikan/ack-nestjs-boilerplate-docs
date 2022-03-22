@@ -4,10 +4,10 @@ Before we start, we need to install some packages and tools.
 
 > Recommend version is LTS Version for every tool and package.
 
-* [NodeJs](#)
-* [MongoDB as Replication](#)
-* [Yarn](#)
-* [Git](#)
+* [NodeJs](https://nodejs.org)
+* [MongoDB as Replication](https://docs.mongodb.com/manual/replication/)
+* [Yarn](https://yarnpkg.com)
+* [Git](https://git-scm.com)
 
 ## Check Packages and tools
 
@@ -126,17 +126,20 @@ AWS_S3_BUCKET=acks3
 
 For detail information about environment, please read this section below
 
-<button-jump-to name="Usage Document section Environment" link="/usage/environment.md"></button-jump-to>
+<button-jump-to name="Jump To Usage Documentation" link="/#/usage/readme"></button-jump-to>
 
 ## Database
 
 !> Mongodb instance must with replication set, cause we need to implement `mongoose transaction.`
 
-If you don't know how to create mongodb, please follow official mongodb instructions.
+First create database `ack` from our App.
+If you don't know how to create mongodb database, [please follow official mongodb instructions](https://www.mongodb.com/basics/create-database).
 
-<button-jump-to name="Mongodb official document" link="/getting-started/adjust-mongoose-setting.md"></button-jump-to>
+### Database Migration
 
-Database migration ack-nestjs-boilerplate-mongoose used [NestJs-Command](#) to do that.&#x20;
+!> Only for initial purpose.
+
+Database migration ack-nestjs-boilerplate-mongoose used [NestJs-Command](https://gitlab.com/aa900031/nestjs-command) to do that.&#x20;
 
 For migrate.
 
@@ -158,7 +161,6 @@ npm run migrate
 
 For rollback.
 
-!> Rollback only use for initial purpose.
 
 <!-- tabs:start -->
 
@@ -176,9 +178,9 @@ npm run rollback
 
 <!-- tabs:end -->
 
-## Automation Test
+## Test
 
-ack-nestjs-boilerplate-mongoose only provide `e2e testing`, and use [Jest as testing framework](#).
+ack-nestjs-boilerplate-mongoose only provide `e2e testing`, and use [Jest as testing framework](https://jestjs.io/docs/getting-started).
 
 Just by type this command on our console.
 
@@ -202,7 +204,7 @@ And the test will passed 100%, if all steps correct.
 
 ## Run Project
 
-> If mongodb version < 5, [Please read section for adjust mongoose setting.](optional-adjust-mongoose-setting.md)
+> If mongodb version < 5, [please read section for adjust mongoose setting.](/getting-started/adjust-mongoose-setting)
 
 Finally, Cheers 🍻🍻 !!! we passed all steps.\
 Now we can run ack-nestjs-boilerplate-mongoose with yarn and use all features.

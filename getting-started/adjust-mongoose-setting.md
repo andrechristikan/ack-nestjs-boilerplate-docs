@@ -1,6 +1,6 @@
 # Adjust Mongoose Setting
 
-> This is optional document
+!> This is optional document
 
 Go to file `src/database/database.service.ts` and add `useMongoClient` then set value to `true`.
 

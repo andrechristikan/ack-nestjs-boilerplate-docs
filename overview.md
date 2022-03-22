@@ -18,10 +18,10 @@ ack-nestjs-boilerplate-mongoose has some objectives including :
 
 We assume that everyone who comes here is _**`programmer with intermediate knowledge`**_ and we also need to understand more before we begin in order to reduce the knowledge gap.
 
-1. Understand [NestJs Fundamental](reference.md), Main Framework. NodeJs Framework with support fully TypeScript.
-2. Understand[Typescript Fundamental](reference.md), Programming Language. It will help us to write and read the code.
-3. Understand [ExpressJs Fundamental](reference.md), NodeJs Base Framework. It will help us in understanding how the NestJs Framework works.
-4. Understand what NoSql is and how it works as a database, especially [MongoDB.](reference.md)
+1. Understand [NestJs Fundamental](http://nestjs.com), Main Framework. NodeJs Framework with support fully TypeScript.
+2. Understand[Typescript Fundamental](https://www.typescriptlang.org), Programming Language. It will help us to write and read the code.
+3. Understand [ExpressJs Fundamental](https://nodejs.org), NodeJs Base Framework. It will help us in understanding how the NestJs Framework works.
+4. Understand what NoSql is and how it works as a database, especially [MongoDB.](https://docs.mongodb.com)
 
 ## Build with
 

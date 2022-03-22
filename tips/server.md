@@ -8,7 +8,7 @@ We can read many article in google about advantage and disadvantage about contai
 
 > **Keywords** : `Advantages of containerized applications`
 
-Popular tools for do this thing is `Docker` , and we recommend to use this tools. &#x20;
+Popular tools for do this thing is `Docker` , and we recommend to use this tools.
 
 > **Keywords** : `Docker advantage`
 
@@ -18,7 +18,7 @@ We will give some tips while using docker
 
 #### Reduce image file
 
-We provide dockerfile that can reduce our container image in production. Location in `prod/dockerfile`&#x20;
+We provide dockerfile that can reduce our container image in production. Location in `prod/dockerfile`
 
 ```docker
 FROM node:lts-alpine as builder
@@ -54,7 +54,7 @@ CMD ["yarn", "start:prod"]
 
 #### Always use alpine image
 
-This because apline is smallest size image `node:lts-alpine`.
+This because apline is `smallest size` image of `node`.
 
 ```docker
 # always use alpine image
@@ -64,7 +64,7 @@ FROM node:lts-alpine as builder
 
 #### Always set specific version about image base
 
-We must to specifict version about our base image  for reduce chance error cause breaking changes. We can replace `node:lts-alpine` with `node:lts-alpine3.15`
+We must to specific version about our base image for reduce chance error cause breaking changes. We can replace `node:lts-alpine` with `node:lts-alpine3.15`
 
 ```docker
 # set specific version about node:lts-apline
@@ -72,15 +72,14 @@ We must to specifict version about our base image  for reduce chance error cause
 FROM node:lts-alpine3.15 as builder
 ```
 
-#### Always seperate container for test and production
+#### Always separate container for test and production
 
-In production we don't need dev dependencies
+In production we don't need dev dependencies. our `dockerfile` build docker in separate runner.
+One is `builder` for `test`, and `main` for `production`.
 
 ```docker
-# seperate build 
-
 # for test
-FROM node:lts-alpine  as builder
+FROM node:lts-alpine as builder
 
 # for production
 FROM node:lts-alpine as main

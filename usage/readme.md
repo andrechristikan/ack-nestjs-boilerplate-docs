@@ -2,25 +2,19 @@
 
 ## Environment value
 
-By default ack-nestjs-boilerplate-mongoose have 3 `Environment value`
+By default ack-nestjs-boilerplate-mongoose have 2 `Environment value`
 
 ### Production
 
-* Mongoose debug will not write into console if even `DATABASE_DEBUG` is true
-* Logger Module will add data into database
-* Cors on
+* Mongoose debug will not write into console if even `DATABASE_DEBUG` is `true`.
+* `DebuggerModule` will not show in console, even logger setting is on. But `DebuggerModule` keep write into file log.
+* Cors origin will allow setting on `src/config/config.middleware.ts`.
 
 ### Development
 
-* Mongoose debug will write into console if `DATABASE_DEBUG` is true
-* Logger Module will add data into database
-* Cors off
-
-### Testing
-
-* Mongoose debug will write into console if `DATABASE_DEBUG` is true
-* Logger Module will not add data into database
-* Cors off
+* Mongoose debug will write into console if `DATABASE_DEBUG` is `true`.
+* `DebuggerModule` will not show in console, and keep write into file log.
+* Cors origin will always at `*`.
 
 ## Example environment
 

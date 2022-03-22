@@ -99,13 +99,11 @@ async get(@GetUser() user: IUserDocument): Promise<IResponse> {
 
 ## Debugger and Logger
 
-Sometimes `DebuggerModule` and `LoggerModule` will make confuse. But these module has difference purpose.
+`DebuggerModule` and `LoggerModule` has difference purpose.
 
 ### Debugger Module
 
-!> Be careful if you use with docker, and you don't mounting volume `/logs` in container with `/logs` in host. Because if the container has down, the logs will lose.
-
-Do not set value of `config.app.debugger.system` to `ON` while production stage, cause that will take a lot of storage.
+!> Be careful while using docker. The docker will erase all container data while the container is down/remove. So if we don't mounting volume `/app/logs` in container with our `/logs` in host, we will loss the log file.
 
 ```typescript
 export default registerAs(
@@ -118,12 +116,11 @@ export default registerAs(
         debug: process.env.APP_DEBUG === 'true' || false,
         debugger: {
             http: {
-                active: true,
                 maxFiles: 5,
                 maxSize: '2M',
             },
             system: {
-                active: false, // <--- set value to false
+                active: false, // <--- will write or not write logger into file
                 maxFiles: '7d',
                 maxSize: '2m',
             },
@@ -132,18 +129,16 @@ export default registerAs(
 );
 ```
 
-DebuggerModule divide become 2 core module
+Actually, `DebuggerModule` divide become 2 modules
 
-#### DebuggerModule&#x20;
+#### DebuggerModule
 
-Like console but can write into file. This have purpose to debug every thing that we want to catch.
+Like console but can write into file. This have purpose to debug every thing that we want to catch. Useful in debugger or track our data flow.
 
-#### HttpDebuggerModule&#x20;
+#### HttpDebuggerModule
 
-A module that can catch every incoming request and response from our application.
+A module that can catch every incoming request and response.
 
 ### Logger Module
-
-> Please use this to save important log, cause this log have purpose to using by our scientist.
 
 Logger module have purpose to save log into database, and then the data will use by our data scientist.

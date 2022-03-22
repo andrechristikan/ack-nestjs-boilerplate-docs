@@ -4,19 +4,11 @@
 - [Features](features.md)
 - Getting Started
     - [Installation](/getting-started/readme.md)
-    - [Installation with Docker](/getting-started/with-docker.md)
-    - Optional
-        - [Adjust Mongoose Setting](/getting-started/adjust-mongoose-setting.md)
+    - [Docker](/getting-started/docker.md)
+    - [Adjust Mongoose Setting](/getting-started/adjust-mongoose-setting.md)
 - Usage Documentation
     - [Environment](/usage/readme.md)
-    - Configuration
-        - [Centralize Configuration](/usage/configuration/centralize-configuration.md)
-        - [Centralize Language and Message](/usage/configuration/centralize-language-and-message.md)
-        - [Centralize Response](/usage/configuration/centralize-response.md)
-        - [Centralize Exception](/usage/configuration/centralize-exception.md)
-        - [Centralize Router](/usage/configuration/centralize-router.md)
-        - [Versioning](/usage/configuration/versioning.md)
-        - [Validation Incoming Request](/usage/configuration/validation-incoming-request.md)
+    - [Configuration](/usage/configuration.md)
     - Database
         - [Mongoose Integration](/usage/database/mongoose-integration.md)
         - [Mongoose Populate and Deep Populate](/usage/database/mongoose-populate-and-deep-populate.md)
@@ -24,22 +16,10 @@
         - [Multi Mongoose Database Connection](/usage/database/multi-mongoose-database-connection.md)
         - [Database Migration](/usage/database/database-migration.md)
     - Middleware
-        - [Helmet](/usage/middleware/helmet.md)
-        - [Rate Limit](/usage/middleware/rate-limit.md)
-        - [Compression](/usage/middleware/compression.md)
-        - [Cors](/usage/middleware/cors.md)
-        - Body Parser
-            - [Json](/usage/middleware/body-parser/readme.md)
-            - [Raw](/usage/middleware/body-parser/raw.md)
-            - [Text](/usage/middleware/body-parser/text.md)
-            - [Multipart Form](/usage/middleware/body-parser/multipart-form.md)
-            - [Urlencoded](/usage/middleware/body-parser/urlencoded.md)
     - Guard
         - [Default Auth](/usage/guard/default-auth.md)
         - [Basic Auth](/usage/guard/basic-auth.md)
-        - [JWT](/usage/guard/jwt/README.md)
-            - [Access Token](/usage/guard/jwt/access-token.md)
-            - [Refresh Token](/usage/guard/jwt/refresh-token.md)
+        - [JWT](/usage/guard/jwt.md)
         - [Password Expired](/usage/guard/password-expired.md)
         - [Role and Permission Management](/usage/guard/role-and-permission-management.md)
     - Logger
@@ -52,11 +32,12 @@
         - [Number](/usage/helper/number.md)
         - [Hash](/usage/helper/hash.md)
         - [Encryption](/usage/helper/encryption.md)
+        - [Array](/usage/helper/array.md)
     - Others
         - [Husky](/usage/others/husky.md)
         - [Docker](/usage/others/docker.md)
         - [Bcrypt](/usage/others/bcrypt.md)
-- [Microservice Documentation ](/microservice/readme.md)
+- [Microservice Documentation](/microservice/readme.md)
 - [Example](example.md)
 - Tips
     - [Application](/tips/readme.md)
