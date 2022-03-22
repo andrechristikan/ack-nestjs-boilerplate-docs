@@ -25,7 +25,7 @@ src
           └── id
 ```
 
-<button-jump-to name="Click here to more information " link="/#/usage/configuration/centralize-configuration"></button-jump-to>
+<button-jump-to name="Click here to more information " link="/#/usage/configuration?id=centralize-configuration"></button-jump-to>
 
 ## OAuth2 as Authorization
 
@@ -38,7 +38,7 @@ ack-nestjs-boilerplate-mongoose use JsonWebToken to implement OAuth2, and provid
 @AuthAdminJwtGuard()
 ```
 
-<button-jump-to name="Click here to more information " link="/#/usage/guard/default-auth"></button-jump-to>
+<button-jump-to name="Click here to more information " link="/#/usage/guard?id=jwt"></button-jump-to>
 
 ## User, Role and Permission Management
 
@@ -66,7 +66,7 @@ async get(@GetUser() user: IUserDocument): Promise<IResponse> {
 }
 ```
 
-<button-jump-to name="Click here to more information " link="/#/usage/guard/default-auth"></button-jump-to>
+<button-jump-to name="Click here to more information " link="/#/usage/guard?id=role-and-permission-management"></button-jump-to>
 
 ## Advance Validate Income Request
 
