@@ -110,14 +110,19 @@
       vueComponents: {
         'button-jump-to': {
           template: `
-            <div class="jump-to-button" @click="window.location.href=link">
+            <div class="jump-to-button" @click="window.location.href=baseUrl+link">
               <object type="image/svg+xml" data="_media/file.svg" width="30" height="30"/>
               <span class="jump-to-button-text">
                 {{ name }}
               </span>
             </div>
           `,
-          props: [ 'link', 'name' ]
+          props: [ 'link', 'name' ],
+          data: function(){
+            return {
+              baseUrl: '/ack-nestjs-boilerplate-docs'
+            }
+          }
         },
       },
     }
