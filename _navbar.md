@@ -1,4 +1,3 @@
 - Translations
 
   - [🇬🇧 English](/)
-  - [🇮🇩 Indonesia](/id)
