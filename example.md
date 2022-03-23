@@ -2,7 +2,7 @@
 
 ack-nestjs-boilerplate-mongoose provide 12 examples.
 
-* Test Simple API
+* Test Simple API / Swagger
 * OAuth2 ( Access Token and Refresh Token )
 * Permission and Role Management
 * Request Validation with `RequestValidationPipe` and `class-validator`
@@ -14,5 +14,6 @@ ack-nestjs-boilerplate-mongoose provide 12 examples.
 * Sign Up
 * Server Side Pagination
 * Simple CRUD
+* Etc.
 
 <button-jump-to name="Github Ack NestJs Boilerplate Mongoose" link="https://github.com/andrechristikan/ack-nestjs-boilerplate-mongoose"></button-jump-to>

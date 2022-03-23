@@ -116,7 +116,6 @@ async create(
 }
 ```
 
-
 ## Advance Mongoose Implementation
 
 [Mongoose](reference.md) is package integration between [NodeJs](reference.md) and [MongoDB](reference.md). Mongoose has an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code with mongoose.
@@ -137,4 +136,8 @@ There have 3 different approaches while doing the implementation.
 
 * `HttpDebuggerModule` can catch everything from the incoming requests.
 * `DebuggerModule` is like `console.log` but can write into files.
-* `LoggerModule` is a logger that can write into a database.
+* `LoggerModule` is a logger that can write into a database
+
+## Etc
+
+<button-jump-to name="Click here to more information " link="/#/usage/readme"></button-jump-to>
