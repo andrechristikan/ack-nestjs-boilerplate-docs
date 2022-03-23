@@ -9,12 +9,7 @@
 - Usage Documentation
     - [Environment](/usage/readme.md)
     - [Configuration](/usage/configuration.md)
-    - Database
-        - [Mongoose Integration](/usage/database/mongoose-integration.md)
-        - [Mongoose Populate and Deep Populate](/usage/database/mongoose-populate-and-deep-populate.md)
-        - [Mongoose Transaction](/usage/database/mongoose-transaction.md)
-        - [Multi Mongoose Database Connection](/usage/database/multi-mongoose-database-connection.md)
-        - [Database Migration](/usage/database/database-migration.md)
+    - [Database](/usage/database.md)
     - Middleware
     - Guard
         - [Default Auth](/usage/guard/default-auth.md)

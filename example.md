@@ -1,6 +1,6 @@
 # Example
 
-ack-nestjs-boilerplate-mongoose provide 6 examples.
+ack-nestjs-boilerplate-mongoose provide 12 examples.
 
 * Test Simple API
 * OAuth2 ( Access Token and Refresh Token )
