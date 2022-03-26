@@ -1,5 +1,7 @@
 # Environment
 
+ack-nestjs-boilerplate-mongoose use `.env` file with `dotenv` package.
+
 ## Environment value
 
 By default ack-nestjs-boilerplate-mongoose have 2 `Environment value`

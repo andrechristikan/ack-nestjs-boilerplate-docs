@@ -1,10 +1,10 @@
 # Database
 
-[MongoDB](https://www.mongodb.com) is one of popular no sql database. [Mongoose](https://mongoosejs.com) is popular package to integrate between mongodb and nodejs. ack-nestjs-boiler-mongoose will use that.
+[MongoDB](https://www.mongodb.com) is one of popular no sql database. [Mongoose](reference.md) is package integration between [NodeJs](reference.md) and [MongoDB](reference.md). Mongoose has an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code with mongoose.
 
-## Mongoose Integration
+## Database Integration
 
-ack-nestjs-boiler-mongoose already integrated with mongodb and we already provide `config` to control the settings of database. Location in `src/config/database.config.ts`.
+ack-nestjs-boiler-mongoose already integrated with `mongodb` and we already provide `config` to control the settings of database. Location in `src/config/database.config.ts`.
 
 ```typescript
 import { registerAs } from '@nestjs/config';
@@ -41,11 +41,13 @@ DATABASE_OPTIONS=
 
 Simply if we want to change database, we just need to change the env.
 
-## Mongoose Populate and Deep Populate
+### Mongoose
+
+#### Mongoose Populate and Deep Populate
 
 `Populate` is similar as `lookup in mongodb` or `join in mysql`. To do populate in mongoose will do like this
 
-### Populate
+##### Populate
 
 Role have some permission
 
@@ -56,7 +58,7 @@ this.roleModel.findOne(find).populate({
 });
 ```
 
-### Deep Populate
+##### Deep Populate
 
 > also we can do deep populate to the deepest populate as we want.
 
@@ -78,7 +80,7 @@ this.userModel.findOne(find).populate({
 });
 ```
 
-## Mongoose Transaction
+#### Mongoose Transaction
 
 !> require mongodb as replication
 

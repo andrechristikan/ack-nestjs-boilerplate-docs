@@ -1,40 +1,22 @@
-<!-- docs/_sidebar.md -->
-
 - [Overview](overview.md)
-- [Features](features.md)
 - Getting Started
     - [Installation](/getting-started/readme.md)
     - [Docker](/getting-started/docker.md)
     - [Adjust Mongoose Setting](/getting-started/adjust-mongoose-setting.md)
-- Usage Documentation
-    - [Environment](/usage/readme.md)
-    - [Configuration](/usage/configuration.md)
-    - [Database](/usage/database.md)
-    - Middleware
-    - Guard
-        - [Default Auth](/usage/guard/default-auth.md)
-        - [Basic Auth](/usage/guard/basic-auth.md)
-        - [JWT](/usage/guard/jwt.md)
-        - [Password Expired](/usage/guard/password-expired.md)
-        - [Role and Permission Management](/usage/guard/role-and-permission-management.md)
-    - Logger
-        - [Logger Module](/usage/logger/logger-module.md)
-        - [Debugger Module](/usage/logger/debugger-module.md)
-        - [Http Debugger Logger](/usage/logger/http-debugger-logger.md)
-    - Helper
-        - [Date](/usage/helper/date.md)
-        - [String](/usage/helper/string.md)
-        - [Number](/usage/helper/number.md)
-        - [Hash](/usage/helper/hash.md)
-        - [Encryption](/usage/helper/encryption.md)
-        - [Array](/usage/helper/array.md)
-    - Others
-        - [Husky](/usage/others/husky.md)
-        - [Docker](/usage/others/docker.md)
-        - [Bcrypt](/usage/others/bcrypt.md)
-- [Microservice Documentation](/microservice/readme.md)
+- Features
+    - [Environment](/features/readme.md)
+    - [Configuration](/features/configuration.md)
+    - [Language](/features/language.md)
+    - [Response](/features/response.md)
+    - [Exception](/features/exception.md)
+    - [Router](/features/router.md)
+    - [Versioning](/features/versioning.md)
+    - [Validation](/features/validation.md)
+    - [Authentication](/features/authentication.md)
+    - [Authorization](/features/authorization.md)
+    - [Logger](/features/logger.md)
+- [Microservice](/microservice/readme.md)
 - [Example](example.md)
 - Tips
     - [Application](/tips/readme.md)
     - [Server](/tips/server.md)
-- [Reference](reference.md)

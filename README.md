@@ -1,12 +1,8 @@
 # Welcome
 
-Welcome to ACK Boilerplate Documentation. This documentation is for [ack-nestjs-boilerplate-mongoose][ack-repo] and [ack-microservice-nestjs-boilerplate-mongoose][ack-microservice-repo]. Documentation will separate into 3 Documents.
+Welcome to ACK Boilerplate Documentation. This documentation is for [ack-nestjs-boilerplate-mongoose][ack-repo] and [ack-microservice-nestjs-boilerplate-mongoose][ack-microservice-repo].
 
-- Setup Documentation
-- Usage Documentation
-- Microservice Documentation
-
-?> **Microservice documentation** is documentation for [ack-microservice-nestjs-boilerplate-mongoose][ack-microservice-repo]
+?> **Microservice** is documentation for [ack-microservice-nestjs-boilerplate-mongoose][ack-microservice-repo]
 
 Let's go into deep ! 🚀
 
