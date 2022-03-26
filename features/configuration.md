@@ -4,7 +4,7 @@ Changing configuration values can be a nightmare for some developers. Perhaps du
 
 ## Config Module
 
-> Store into Global Variable
+> Store as global module
 
 ack-nestjs-boilerplate-mongoose used `@nestjs/config` module to manage all configs and set in `src/config/*`.
 

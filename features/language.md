@@ -1,6 +1,6 @@
 # Language
 
-> Store into Global Variable
+> Store as global module
 
 ack-nestjs-boilerplate-mongoose use `I18nModule` and wrap into `MessageModule`. All languages will manage in MessageModule and store into `Global variable` same as `ConfigModule`. It's because we will use it often. Location in `src/message/message.module.ts`
 
