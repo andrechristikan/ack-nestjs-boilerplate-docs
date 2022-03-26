@@ -126,8 +126,8 @@ Yup, as you guess. We just need to change value from `.env` or `x-custom-lang` o
 
 We can use `MessageModule` with 3 way.
 
-* [@Response()](#response) or [@ResponsePaging()](#responsepaging)
-* [ErrorHttpFilter](#centralize-exception)
+* [@Response()](/features/response?id=response-decorator) or [@ResponsePaging()](/features/response?id=response-paging-decorator)
+* [ErrorHttpFilter](/features/exception)
 * [Direct](#direct)
 
 ### Response Decorator

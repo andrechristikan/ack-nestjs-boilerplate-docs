@@ -1,6 +1,6 @@
 # Database
 
-[MongoDB](https://www.mongodb.com) is one of popular no sql database. [Mongoose](reference.md) is package integration between [NodeJs](reference.md) and [MongoDB](reference.md). Mongoose has an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code with mongoose.
+[MongoDB](https://www.mongodb.com) is one of popular no sql database. [Mongoose](https://mongoosejs.com) is package integration between NodeJs and MongoDB. Mongoose has an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code with mongoose.
 
 ## Database Integration
 

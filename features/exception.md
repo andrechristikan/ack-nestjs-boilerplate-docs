@@ -37,7 +37,7 @@ Exception Filter in ack-nestjs-boilerplate-mongoose will named as `ErrorHttpFilt
 * `GatewayTimeoutException`
 * `PreconditionFailedException`
 
-As long as we use [`Response Decorator`](#centralize-response) or [`Response Paging Decorator`](#centralize-response) Decorator, `ErrorHttpFilter` will also imported. Cause `ErrorHttpFilter` and `Response Decorator` wrap into same group decorator.
+As long as we use [`Response Decorator`](/features/response?id=response-decorator) or [`Response Paging Decorator`](/features/response?id=response-paging-decorator) Decorator, `ErrorHttpFilter` will also imported. Cause `ErrorHttpFilter` and `Response Decorator` wrap into same group decorator.
 
 ```typescript
 import { ResponsePagingInterceptor } from './interceptor/response.paging.interceptor';
