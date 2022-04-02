@@ -2,17 +2,17 @@
 
 > Location of log file is `/logs`
 
-Catch every activity with `logger`. ack-nestjs-mongoose can catch every activity about what user do. By default, user activities will be written into files, and console.
+With `logger` you can record every activity. ack-nestjs-mongoose can record every action taken by the user. By default, user activities are recorded in files and the console.
 
-There have 3 different module about logger
+There are 3 different logger modules.
 
 * `HttpDebuggerModule` can catch everything from the incoming requests.
-* `DebuggerModule` is like `console.log` but can write into files.
+* `DebuggerModule` is similar to `console.log` but can write into files.
 * `LoggerModule` is a logger that can write into a database
 
 ## HttpDebuggerModule
 
-`HttpDebuggerModule` is automatically import into app module as `middleware`. The location in `src/utils/middleware/middleware.module.ts`
+`HttpDebuggerModule` is automatically imported into the app module as `middleware`. The location in `src/utils/middleware/middleware.module.ts`
 
 ```txt
 src
@@ -26,15 +26,15 @@ src
 
 > Store as global module
 
-`DebuggerModule` is like `console.log` but can write into files. `DebuggerModule` have 3 difference level
+`DebuggerModule` is similar to `console.log` but can write into files. `DebuggerModule` have 3 different level
 
-1. Info : will write into console, and write into `/logs/system/default/*`.
+1. Info : will write to console, and write into `/logs/system/default/*`.
 2. Debugger: will write into `/logs/system/debug/*`.
 3. Error: will write into `/logs/system/log/*`
 
 ### Usage
 
-In every where of the module (service, controller, pipe, etc).
+Everywhere in the module (service, controller, pipe, etc).
 
 ```typescript
 @Controller({
@@ -64,7 +64,7 @@ export class DebuggerController {
 
 > Store as global module
 
-`LoggerModule` is a logger that can write into a database. `LoggerModule` have purpose to save log into database, and then the data will use by our data scientist.
+`LoggerModule` is a logger that can write into a database. `LoggerModule` has a purpose to save the log into the database, and then the data will use by our data scientist.
 
 ### Usage
 

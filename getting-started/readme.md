@@ -11,7 +11,7 @@ Before we start, we need to install some packages and tools.
 
 ## Check Packages and tools
 
-Check NodeJs is successful installed.
+Check that NodeJs has been installed successfully.
 
 ```bash
 node --version
@@ -20,7 +20,7 @@ node --version
 # v17.3.0
 ```
 
-Check MongoDB is successful installed.
+Check MongoDB has been successfully installed.
 
 ```bash
 mongod --version
@@ -29,7 +29,7 @@ mongod --version
 # db version v5.0.4
 ```
 
-Check package manager `yarn` or `npm` is successful installed.
+Check package manager `yarn` or `npm` is successfully installed.
 
 <!-- tabs:start -->
 
@@ -64,7 +64,7 @@ git clone https://github.com/andrechristikan/ack-nestjs-boilerplate-mongoose
 
 > Make sure we on root dir of ack-nestjs-boilerplate-mongoose
 
-We must to install app dependencies to run this project
+To run this project, we must install app dependencies.
 
 <!-- tabs:start -->
 
@@ -124,7 +124,7 @@ AWS_S3_REGION=us-east-2
 AWS_S3_BUCKET=acks3
 ```
 
-For detail information about environment, please read this section below
+For detailed information about the environment, please read this section below
 
 <button-jump-to name="Jump To Usage Documentation" link="/#/usage/readme"></button-jump-to>
 
@@ -132,7 +132,7 @@ For detail information about environment, please read this section below
 
 !> Mongodb instance must with replication set, cause we need to implement `mongoose transaction.`
 
-First create database `ack` from our App.
+First, create database `ack` from our App.
 If you don't know how to create mongodb database, [please follow official mongodb instructions](https://www.mongodb.com/basics/create-database).
 
 ### Database Migration
@@ -200,14 +200,14 @@ npm run test
 
 <!-- tabs:end -->
 
-And the test will passed 100%, if all steps correct.
+And if all steps are followed correctly, the test will be 100% success.
 
 ## Run Project
 
 > If mongodb version < 5, [please read section for adjust mongoose setting.](/getting-started/adjust-mongoose-setting)
 
 Finally, Cheers 🍻🍻 !!! we passed all steps.\
-Now we can run ack-nestjs-boilerplate-mongoose with yarn and use all features.
+Now we can run ack-nestjs-boilerplate-mongoose with yarn and use all of its features.
 
 <!-- tabs:start -->
 

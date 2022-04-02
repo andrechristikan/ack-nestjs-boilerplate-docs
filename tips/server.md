@@ -4,21 +4,21 @@ Tips for store ack-nestjs-boilerplate-mongoose to server.
 
 ## Containerization
 
-We can read many article in google about advantage and disadvantage about containerization, you can read by yourself.
+Many articles about the benefits and drawbacks of containerization can be found on Google, which you can read for yourself.
 
-> **Keywords** : `Advantages of containerized applications`
+> **Keywords**: `Advantages of containerized applications`
 
-Popular tools for do this thing is `Docker` , and we recommend to use this tools.
+We recommend using `Docker`, which is a popular tool for doing this.
 
-> **Keywords** : `Docker advantage`
+> **Keywords**: `Docker advantage`
 
 ### Tips about docker
 
-We will give some tips while using docker
+We will provide some tips for using Docker.
 
 #### Reduce image file
 
-We provide dockerfile that can reduce our container image in production. Location in `prod/dockerfile`
+We provide a Dockerfile that can be used to reduce the size of our container image in production. Location in `prod/dockerfile`
 
 ```docker
 FROM node:lts-alpine as builder
@@ -54,7 +54,7 @@ CMD ["yarn", "start:prod"]
 
 #### Always use alpine image
 
-This because apline is `smallest size` image of `node`.
+This is because the alpine is the `smallest size` image of a`node`.
 
 ```docker
 # always use alpine image
@@ -62,9 +62,9 @@ This because apline is `smallest size` image of `node`.
 FROM node:lts-alpine as builder
 ```
 
-#### Always set specific version about image base
+#### Always set specific version of image base
 
-We must to specific version about our base image for reduce chance error cause breaking changes. We can replace `node:lts-alpine` with `node:lts-alpine3.15`
+We must use a specific version of our base image to reduce the possibility of errors causing breaking changes. We can replace `node:lts-alpine` with `node:lts-alpine3.15`
 
 ```docker
 # set specific version about node:lts-apline
@@ -72,10 +72,10 @@ We must to specific version about our base image for reduce chance error cause b
 FROM node:lts-alpine3.15 as builder
 ```
 
-#### Always separate container for test and production
+#### Always separate containers for test and production
 
-In production we don't need dev dependencies. our `dockerfile` build docker in separate runner.
-One is `builder` for `test`, and `main` for `production`.
+We don't need dev dependencies in production. Our `dockerfile` creates a separate runner for docker. 
+The first is the `builder` for the `test,` and the second is the `main` for `production.`
 
 ```docker
 # for test
@@ -87,21 +87,21 @@ FROM node:lts-alpine as main
 
 ## CI / CD
 
-If we have so many application, it will waste so many time to update one by one, test and deploy (to staging and production). `So we highly recommend to use CI/CD`
+If we have multiple applications, it will take a long time to update, test, and deploy each one (to staging and production). `As a result, we strongly recommend using CI/CD.`
 
-What is CI/CD ? you can read and search advantage is google. Go ahead.
+What is CI/CD? you can read and search advantage in google. Go ahead.
 
-> Keyword : `Advantage of CI CD`
+> Keyword: `Advantage of CI-CD`
 
-Popular tools that we choose is `Jenkins`
+The popular tool that we choose is `Jenkins`
 
 ### Jenkins Pipeline
 
-We already provide jenkins script pipeline that can use for production, that already combine with `Docker` and `Automation Test`
+We already provide a Jenkins script pipeline that can use for production, that is already combined with `Docker` and `Automation Test`
 
 > Location dir in `prod/jenkis`
 
-How to adjust that pipeline script ? Don't change or remove code in `stage`. We just need to change value in `environment`
+How to adjust that pipeline script? Don't change or remove code in `stage`. We only need to change the value in `environment`
 
 ```groovy
 pipeline {
@@ -145,14 +145,14 @@ pipeline {
 
 #### Jenkins Stage Pipeline
 
-Description for what jenkins do in every stage
+Description of what Jenkins do in every stage
 
-| Stage   | Description                                                                 |
-| ------- | --------------------------------------------------------------------------- |
-| Prepare | Check dependencies, and pull base image                                     |
-| Clone   | Clone git                                                                   |
-| Build   | Build image for test and production                                         |
-| Test    | Build container and test image with automation testing                      |
-| Push    | Push Production image, if test stage passed                                 |
-| Deploy  | SSH to server production, and deploy production image into docker container |
-| Clean   | Clean unnessasary docker images in production server and in jenkins server  |
+| Stage   | Description                                                  |
+| ------- | ------------------------------------------------------------ |
+| Prepare | Check dependencies, and pull base image                      |
+| Clone   | Clone git                                                    |
+| Build   | Build image for test and production                          |
+| Test    | Build container and test image with automation testing       |
+| Push    | Push Production image, if test stage passed                  |
+| Deploy  | SSH to server production, and deploy production image into the docker container |
+| Clean   | Clean unnecessary docker images in production server and in Jenkins server |

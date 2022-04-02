@@ -4,23 +4,23 @@ ack-nestjs-boilerplate-mongoose use `.env` file with `dotenv` package.
 
 ## Environment value
 
-By default ack-nestjs-boilerplate-mongoose have 2 `Environment value`
+By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 
 ### Production
 
-* Mongoose debug will not write into console if even `DATABASE_DEBUG` is `true`.
-* `DebuggerModule` will not show in console, even logger setting is on. But `DebuggerModule` keep write into file log.
+* Mongoose debug will not write into the console even if `DATABASE_DEBUG` is set to `true`.
+* Even if the logger setting is enabled, the `DebuggerModule` will not appear in the console. On the other hand, `DebuggerModule`, keeps writing to the file log
 * Cors origin will allow setting on `src/config/config.middleware.ts`.
 
 ### Development
 
-* Mongoose debug will write into console if `DATABASE_DEBUG` is `true`.
-* `DebuggerModule` will not show in console, and keep write into file log.
+* Mongoose debug will write into the console if `DATABASE_DEBUG` is `true`.
+* `DebuggerModule` will not show in the console, and keep writing into file log.
 * Cors origin will always at `*`.
 
 ## Example environment
 
-Environment location `.env.example`. By default environment will look like this.
+Environment location `.env.example`. By default, the environment will look like this.
 
 ```txt
 APP_ENV=development

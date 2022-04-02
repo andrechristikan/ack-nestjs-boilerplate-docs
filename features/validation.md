@@ -1,12 +1,12 @@
 # Validation
 
-> `RequestValidationPipe` will validate all incoming request based on `ClassValidator`
+> `RequestValidationPipe` will validates all incoming requests based on `ClassValidator`
 
-ack-nestjs-boilerplate-mongoose combine `class-validator` with `NestJs Pipe` for create `RequestValidationPipe`. `RequestValidationPipe` is pipe validator for incoming request. Location in `src/utils/request/pipe/request.validation.pipe.ts`
+ack-nestjs-boilerplate-mongoose combine `class-validator` with `NestJs Pipe` for create `RequestValidationPipe`. `RequestValidationPipe` is a pipe validator for the incoming request. Location in `src/utils/request/pipe/request.validation.pipe.ts`
 
 ## Request Validation Pipe
 
-To use `RequestValidationPipe` we need to create `ClassValidator` as validator for our request.
+To use `RequestValidationPipe` we need to create `ClassValidator` as a validator for our request.
 
 ```typescript
 import { Type } from 'class-transformer';
@@ -39,7 +39,7 @@ export class AuthLoginValidation {
 
 ```
 
-Then we need to add `ClassValidator` into `RequestValidationPipe` whitelist.
+Then we need to add `ClassValidator` to the whitelist of `RequestValidationPipe` .
 
 ```typescript
 export class RequestValidationPipe implements PipeTransform {
@@ -84,7 +84,7 @@ export class AuthController {
 }
 ```
 
-if error response will look like
+if the error response will look like this
 
 ```json
 {

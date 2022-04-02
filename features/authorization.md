@@ -1,14 +1,14 @@
 # Authorization
 
-We guard endpoints with specific permissions simply by using `AuthAdminJwtGuard` or `AuthPublicJwtGuard`.
+We protect endpoints with specific permissions simply by using `AuthAdminJwtGuard` or `AuthPublicJwtGuard`.
 
 ## Usage
 
-Example we will use `AuthAdminJwtGuard` to get user with id
+The example, we will use `AuthAdminJwtGuard` to get user with id
 
 ```typescript
 // describe permission, only role with USER_READ permission can access
-// with this decorator, we already check our payload
+// with this decorator, we already checked our payload
 // - the active status user
 // - the active status role
 // - and the active status permission
@@ -32,7 +32,7 @@ src
       └── permission.constant.ts
 ```
 
-and will look like
+and will look like this
 
 ```typescript
 export enum ENUM_PERMISSIONS {

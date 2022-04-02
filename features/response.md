@@ -2,7 +2,7 @@
 
 > `Response Decorator` and `Response Paging Decorator` will restructure success response.
 
-ack-nestjs-boilerplate-mongoose use `Response Decorator`. `Response Decorator` consume `interceptor` from `@nestjs/common` and wrap into decorator. Location in `src/utils/response/interceptor/*`. Response decorator have purpose to centralize and restructure success response. That can be easy to maintain or if we have to change.
+ack-nestjs-boilerplate-mongoose using `Response Decorator`. `Response Decorator` consumes `interceptor` from `@nestjs/common` and wraps it in the decorator. Location in `src/utils/response/interceptor/*`. The goal of the response decorator is to centralize and restructure the successful response. That can be easy to maintain or change if necessary.
 
 ```txt
 src
@@ -13,7 +13,7 @@ src
                 └── response.paging.interceptor.ts
 ```
 
-Response decorator divide become 2 decorators.
+Response decorator is divided into 2 decorators.
 
 * `@Response` for default usage.
 * `@ResponsePaging` for paging usage.
@@ -35,7 +35,7 @@ export function Response(messagePath: string, statusCode?: number): any {
 
 ### Usage
 
-!> Don't forget to set return type of promise
+!> Don't forget to set the return type of promise
 
 #### Default usage
 
@@ -53,7 +53,7 @@ async hello(): Promise<void> {
 
 #### With Data
 
-`@Response` also work with data, just by give return value.
+`@Response` also works with data, just by giving return value.
 
 ```typescript
 import { Response } from 'src/utils/response/response.decorator';
@@ -94,9 +94,9 @@ export function ResponsePaging(messagePath: string, statusCode?: number): any {
 
 ### Usage
 
-!> Don't forget to set return type of promise
+!> Don't forget to set the return type of promise
 
-`@ResponsePaging` return type will be use for server side paging.
+`@ResponsePaging` return type will be used for server-side paging.
 
 ```typescript
 import { ResponsePaging } from 'src/utils/response/response.decorator';
@@ -134,7 +134,7 @@ export interface IResponsePaging {
 
 ## Custom Status Error
 
-By default `StatusCode` will same as HttpStatus. But both of `@Reponse` and `@ResponsePaging` can make custom for StatusCode. Just by put `number or string value` in 2nd param.
+By default, `StatusCode` is the same as HttpStatus. However, both of `@Reponse` and `@ResponsePaging` can specify a custom for StatusCode. Simply enter `number or string value` in the 2nd param.
 
 ```typescript
 import { Response } from 'src/utils/response/response.decorator';

@@ -1,6 +1,6 @@
 # Database
 
-[MongoDB](https://www.mongodb.com) is one of popular no sql database. [Mongoose](https://mongoosejs.com) is package integration between NodeJs and MongoDB. Mongoose has an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code with mongoose.
+[MongoDB](https://www.mongodb.com) is one of the popular no sql database. [Mongoose](https://mongoosejs.com) is a package that integrates NodeJs and MongoDB. Mongoose provides an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code in mongoose.
 
 ## Database Integration
 
@@ -45,7 +45,7 @@ Simply if we want to change database, we just need to change the env.
 
 #### Mongoose Populate and Deep Populate
 
-`Populate` is similar as `lookup in mongodb` or `join in mysql`. To do populate in mongoose will do like this
+`Populate` is similar as `lookup in mongodb` or `join in mysql`. To do populate in mongoose do as follows.
 
 ##### Populate
 
@@ -60,9 +60,9 @@ this.roleModel.findOne(find).populate({
 
 ##### Deep Populate
 
-> also we can do deep populate to the deepest populate as we want.
+> We can also do deep populate to deepest populate as many times as we want.
 
-Of course we can do deeply
+Of course, we can do deeply
 
 ```typescript
 this.userModel.findOne(find).populate({
@@ -148,7 +148,7 @@ The scenario is `delete our user`.
     ```typescript
     import { Connection } from 'mongoose';
     import { DatabaseConnection } from 'src/database/database.constant'; 
-
+    
     export class UserAdminController {
         constructor(
             @DatabaseConnection() private readonly databaseConnection: Connection,
@@ -156,7 +156,7 @@ The scenario is `delete our user`.
             ...
             ...
         ) {}
-
+    
         @Response('user.delete')
         @UserDeleteGuard()
         @AuthAdminJwtGuard(ENUM_PERMISSIONS.USER_READ, ENUM_PERMISSIONS.USER_DELETE)
@@ -167,7 +167,7 @@ The scenario is `delete our user`.
         ): Promise<void> {
             const databaseSession = await this.databaseConnection.startSession();
             databaseSession.startTransaction();
-
+    
             // let assume we already edit our LoggerService too, options second param
             await this.loggerService.info(
                 {
@@ -183,7 +183,7 @@ The scenario is `delete our user`.
             await this.userService.deleteOneById(user._id,
                 databaseSession,
             );
-
+    
             await databaseSession.commitTransaction();
             databaseSession.endSession();
         
@@ -198,7 +198,7 @@ ack-nestjs-boilerplate-mongoose use `nestjs-command` package.
 
 Example migrate permission.
 
-1. Create seeding and named as `PermissionSeed`
+1. Create seeding and name as `PermissionSeed`
 
     ```typescript
     import { Command } from 'nestjs-command';

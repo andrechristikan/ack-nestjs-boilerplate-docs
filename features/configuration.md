@@ -46,9 +46,9 @@ export class CoreModule {}
 
 ### Set default value
 
-> We recommend to set default value in `configs file` in `src/config/*`, and don't set default value in Controller, or Service.
+> We recommend setting the default value in `configs file` in `src/config/*`, and not in the in Controller, or Service.
 
-We can use `.env file` as default value of our config, or we can set directly. Let see our `AppConfig`
+We can use `.env file` as the default value of our config, or we can set it directly. Take a look at our `AppConfig`
 
 ```typescript
 import { registerAs } from '@nestjs/config';
@@ -75,7 +75,7 @@ export default registerAs(
 
 ### Add new config
 
-Let add `AppConfig` into `config index`, so we can call `AppConfig` anywhere.
+Let's add `AppConfig` into `config index`, so we can call `AppConfig` from anywhere.
 
 ```typescript
 import AppConfig from 'src/config/app.config';
@@ -92,7 +92,7 @@ export default [
 
 ### Use Config in Controller or Service
 
-Configs can access by call `ConfigService` . Just put it tu constructor of function and don't forget to use `@Injectable` decorator too.
+Configs can be accessed by calling `ConfigService` . Simply add it to the constructor of function and don't forget to use `@Injectable` decorator too.
 
 ```typescript
 import { ConfigService } from '@nestjs/config';

@@ -6,6 +6,7 @@
 - Features
     - [Environment](/features/readme)
     - [Configuration](/features/configuration)
+    - [Database](/features/database)
     - [Language](/features/language)
     - [Response](/features/response)
     - [Exception](/features/exception)

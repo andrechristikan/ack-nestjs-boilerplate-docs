@@ -2,7 +2,7 @@
 
 > All service must as [independent service](/tips/readme?id=independent-service)
 
-Routes will put in `src/router/*` . Every route will have difference prefix. Endpoints or Controller that added in router will follow router prefix. List of prefix in `src/app/app.module.ts`
+Routes will be put in `src/router/*` . Every route will have a different prefix. Endpoints or Controller that are added to the router will use the router prefix. List of prefixes in `src/app/app.module.ts`
 
 ```txt
 src
@@ -13,12 +13,12 @@ src
 
 ## Background
 
-Why we use RouterModule and why we don't just use controller prefix ?
-Well sometimes the controller prefix can't resolve prefix problem for complex path. [You can read this article for more information](https://docs.nestjs.com/recipes/router-module)
+Why do we use RouterModule instead of just using the controller prefix? 
+In some cases, the controller prefix is unable to resolve prefix issues for the complex path. [You can read this article for more information](https://docs.nestjs.com/recipes/router-module)
 
 ## Example
 
-For example we use `RouterAdminModule`, and the prefix is `/admin`
+For example, we use `RouterAdminModule` with the prefix is `/admin`
 
 ```typescript
 import { RouterAdminModule } from 'src/router/router.admin.module';
@@ -74,7 +74,7 @@ But if we use `RouterModule` will look like this.
 
 ## List of routes
 
-List of routes that ack-nestjs-boilerplate-mongoose provide
+List of routes provided by ack-nestjs-boilerplate-mongoose
 
 ```typescript
 RouterModule.register([

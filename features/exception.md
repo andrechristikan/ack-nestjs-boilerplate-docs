@@ -52,7 +52,7 @@ export function ResponsePaging(messagePath: string, statusCode?: number): any {
 
 ## Usage
 
-Example create user, but got error exist.
+For example, try to create a user but got an error that one already exists.
 
 ### Default Usage
 
@@ -89,7 +89,7 @@ async create(
 }
 ```
 
-or also we can pass object too
+or we can also pass an object.
 
 ```typescript
 throw new BadRequestException({

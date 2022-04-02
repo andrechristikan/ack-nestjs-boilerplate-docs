@@ -3,7 +3,7 @@
 [OAuth 2.0](https://oauth.net/2/) is the industry-standard protocol for authorization. This is used to describe the user. ack-nestjs-boilerplate-mongoose combine between `@nestjs/jwt` and `@nestjs/passport` to implement `OAuth2`.
 As we know, OAuth has 2 token `accessToken` and `RefreshToken`.
 
-The config of access token will put in `src/config/auth.config.ts`
+The config of access token will be put in `src/config/auth.config.ts`
 
 ```txt
 src
@@ -12,7 +12,7 @@ src
       └── auth.config.ts
 ```
 
-and the value will look like
+and the value will look like this
 
 ```typescript
 import { registerAs } from '@nestjs/config';
@@ -44,9 +44,9 @@ export default registerAs(
 
 > Access token create in `login endpoint`
 
-Access token will have `30 minutes` to active and then we must to refresh the access token. The access token will separate into 2 guard `AuthPublicJwtGuard` and `AuthAdminJwtGuard`.
+The access token will have `30 minutes` to active and then we must refresh the access token. The access token will separate into 2 guards `AuthPublicJwtGuard` and `AuthAdminJwtGuard.
 
-These guard  will check based on `payload user`.
+These guards will check based on `payload user`.
 
 1. is_active user
 2. is_active role
@@ -61,7 +61,7 @@ These guard  will check based on `payload user`.
 
 #### Usage
 
-Get profile user with `AuthPublicJwtGuard` as guard
+Get profile user with `AuthPublicJwtGuard` as a guard
 
 ```typescript
 @Response('user.profile')
@@ -78,7 +78,7 @@ async profile(@GetUser() user: IUserDocument): Promise<IResponse> {
 
 #### Usage
 
-Get user endpoint with `AuthAdminJwtGuard` as guard
+Get user endpoint with `AuthAdminJwtGuard` as a guard
 
 ```typescript
 @Response('user.get')
@@ -93,7 +93,7 @@ async get(): Promise<string> {
 
 > Refresh token create in `refresh endpoint`
 
-Refresh token will able to use after access token expired or `30 minutes after access token created`. Refresh token have `7 days` to active or if `rememberMe` in login endpoint is `true` then refresh token will have `200 days` to active. Refresh Token will use for refresh the access token if access token expired, so you don't need to relogin.
+The refresh token can be used after the access token has expired or `30 minutes after the access token was created`, the refresh token will be valid for `7 days.` If`rememberMe` in the login endpoint is set to `true`, the refresh token will be valid for `200 days`. Refresh Token will be used to refresh the access token if it expires, eliminating the need to re-login.
 
 Refresh token will put into guard `AuthRefreshJwtGuard`
 

@@ -4,7 +4,7 @@ Tips for use ack-nestjs-boilerplate-mongoose.
 
 ## Function Decorator Ordering
 
-We realize for our decorator sometimes make the app broken. So for fix that issue, you can follow this tips.
+We recognize that our decorator occasionally causes the app to malfunction. So, to resolve that issue, you can use the following suggestions.
 
 ```typescript
 @Response()
@@ -16,7 +16,8 @@ We realize for our decorator sometimes make the app broken. So for fix that issu
 
 ## Independent Service
 
-Make sure we create service as independent. That means the service don't need other services. Let make inheritance between service into controller. Checkout ack-nestjs-boilerplate-mongoose carefully for example.
+Make sure that we create service as a stand-alone. This means that the service does not require any additional services.
+Let us make inheritance between services into the controller. Take a look at ack-nestjs-boilerplate-mongoose, for example.
 
 ## Response Type
 
@@ -40,11 +41,12 @@ export class TestingController {
 
 ## Guard as validation
 
-Guard can be a validation too. With guard we can reuse our validation with other modules.
+Guard can also be used as a form of validation. We can reuse our validation with other modules using guard.
 
-`User not found validation` that use in each endpoint that have `/:_id` param. Let imagine if we have 5 endpoint, we need to write 5 `User not found validation` for each endpoint. That will hard and take a lot time when we need to change, we must change 5 validation.
+`User not found validation` is used in each endpoint with the '/: id' parameter. 
+Assume we have 5 endpoints and need to write 5 'User not found validation' for each one. When we need to change, we must change 5 validation, which will be difficult and time-consuming.
 
-But let imagine if we wrap the `User not found validation` into Guard ? and then if there have new endpoint, we just use that guard. Simple right ?
+But what if we wrapped the `User not found validation` in Guard? If there is a new endpoint, we simply use that guard. Isn't it simple?
 
 ```typescript
 // User not found validation with guard
@@ -99,11 +101,11 @@ async get(@GetUser() user: IUserDocument): Promise<IResponse> {
 
 ## Debugger and Logger
 
-`DebuggerModule` and `LoggerModule` has difference purpose.
+`DebuggerModule` and `LoggerModule` have a different purpose.
 
 ### Debugger Module
 
-!> Be careful while using docker. The docker will erase all container data while the container is down/remove. So if we don't mounting volume `/app/logs` in container with our `/logs` in host, we will loss the log file.
+!>Use docker with caution. While the container is down/removed, Docker will erase all container data. We will lose the log file if we do not mount volume '/app/logs' in the container with our '/logs' in the host.
 
 ```typescript
 export default registerAs(
@@ -129,16 +131,17 @@ export default registerAs(
 );
 ```
 
-Actually, `DebuggerModule` divide become 2 modules
+Actually, `DebuggerModule` divides into 2 modules
 
 #### DebuggerModule
 
-Like console but can write into file. This have purpose to debug every thing that we want to catch. Useful in debugger or track our data flow.
+Like console, but with the ability to write to a file. This serves the purpose of debugging everything that we want to catch. This is useful in the debugger or when tracking our data flow.
 
 #### HttpDebuggerModule
 
-A module that can catch every incoming request and response.
+A module that can catch all incoming requests and responses.
 
 ### Logger Module
 
-Logger module have purpose to save log into database, and then the data will use by our data scientist.
+The logger module's purpose is to save logs to a database, which will then be used by our data scientist.
+

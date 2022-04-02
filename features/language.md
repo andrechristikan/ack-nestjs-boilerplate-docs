@@ -2,7 +2,7 @@
 
 > Store as global module
 
-ack-nestjs-boilerplate-mongoose use `I18nModule` and wrap into `MessageModule`. All languages will manage in MessageModule and store into `Global variable` same as `ConfigModule`. It's because we will use it often. Location in `src/message/message.module.ts`
+ack-nestjs-boilerplate-mongoose used `I18nModule` and wrap it into `MessageModule`. All languages will be managed in MessageModule and stored in the same `Global variable` as `ConfigModule`. It's because we'll be using it frequently. Location in `src/message/message.module.ts`
 
 ```txt
 src
@@ -30,7 +30,7 @@ import { MessageService } from 'src/message/message.service';
 export class MessageModule {}
 ```
 
-and then, we import into our `CoreModule`
+and then, we import it into our `CoreModule`
 
 ```typescript
 import { MessageModule } from 'src/message/message.module';
@@ -57,7 +57,7 @@ export class CoreModule {}
 
 ## Language
 
-ack-nestjs-boilerplate-mongoose already provide 2 languages (`English` and `Indonesia`). Check out in `src/message/languages/*`
+ack-nestjs-boilerplate-mongoose already provides 2 languages (`English` and `Indonesia`). Check out in `src/message/languages/*`
 
 And this our enum
 
@@ -72,7 +72,7 @@ export enum ENUM_MESSAGE_LANGUAGE {
 
 > The default of language is `en`
 
-We can see or change default from `.env` file
+We can see or change the default from `.env` file
 
 ```txt
 APP_ENV=development
@@ -90,7 +90,7 @@ APP_TZ=Asia/Jakarta
 
 ### Dynamic language
 
-We don't need any extra configuration, we just need to add `x-custom-lang` into `Header Request`. Example we will change language to `id` .
+We don't need any additional configuration, we just need to add `x-custom-lang` into `Header Request`. For example, we will change the language to `id` .
 
 ```json
 {
@@ -108,7 +108,7 @@ We don't need any extra configuration, we just need to add `x-custom-lang` into 
 
 > Delimiter is coma (,)
 
-Yup, as you guess. We just need to change value from `.env` or `x-custom-lang` on `Header Request`.
+Yup, as you might expect. We just need to change the value from `.env` or `x-custom-lang` on `Header Request`.
 
 ```json
 {
@@ -124,7 +124,7 @@ Yup, as you guess. We just need to change value from `.env` or `x-custom-lang` o
 
 ## Usage
 
-We can use `MessageModule` with 3 way.
+We can use `MessageModule` with 3 ways.
 
 * [@Response()](/features/response?id=response-decorator) or [@ResponsePaging()](/features/response?id=response-paging-decorator)
 * [ErrorHttpFilter](/features/exception)
@@ -152,7 +152,7 @@ export class TestingController {
 
 ### Error Http Filter
 
-Same as response decorator, we just need to pass the path of language.
+We only need to pass the path of language, just like the response decorator.
 
 ```typescript
 import { InternalServerErrorException } from '@nestjs/common';
@@ -175,7 +175,7 @@ export class TestingController {
 
 ### Direct
 
-Or we want to direct use, here example for that
+Or, if we want to use it directly, here's an example.
 
 ```typescript
 import { Message } from 'src/message/message.decorator';
