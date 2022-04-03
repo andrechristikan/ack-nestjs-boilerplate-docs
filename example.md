@@ -1,19 +1,19 @@
 # Example
 
-ack-nestjs-boilerplate-mongoose provide 12 examples.
-
-* Test Simple API / Swagger
-* OAuth2 ( Access Token and Refresh Token )
+* Test Simple API
+* Simple CRUD
+* Server Side Pagination
 * Permission and Role Management
-* Request Validation with `RequestValidationPipe` and `class-validator`
-* How to use `LoggerModule` and `DebuggerModule`
+* Request Validation / `RequestValidationPipe`
+* Logger / `LoggerModule` or `DebuggerModule`
+* Exception Filter / `ErrorHttpFilter`
+* Response Interceptor / `Response Decorator` or `Response Paging Decorator`
+* JsonWebToken Guard / `AuthPublicJwtGuard` or `AuthAdminJwtGuard`
 * Mongoose Population and Deep Population
 * Mongoose Transaction
 * Upload Image or File to AWS S3
+* Swagger
 * Login
 * Sign Up
-* Server Side Pagination
-* Simple CRUD
-* Etc.
 
 <button-jump-to name="Github Ack NestJs Boilerplate Mongoose" link="https://github.com/andrechristikan/ack-nestjs-boilerplate-mongoose"></button-jump-to>

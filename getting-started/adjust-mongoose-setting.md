@@ -1,6 +1,6 @@
 # Adjust Mongoose Setting
 
-!> This is optional document
+!> Just is case, if you mongodb version is < 5
 
 Go to file `src/database/database.service.ts` and add `useMongoClient` then set value to `true`.
 
@@ -15,7 +15,7 @@ const mongooseOptions: MongooseModuleOptions = {
     uri,
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useMongoClient: true  // <<<<---- uncomment this
+    useMongoClient: true  // <<<<---- add this or uncomment this
 };
 
 

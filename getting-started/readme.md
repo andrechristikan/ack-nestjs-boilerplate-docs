@@ -39,7 +39,7 @@ Check package manager `yarn` or `npm` is successfully installed.
 yarn --version
 
 # will return 
-# 1.22.17
+# 1.22.15
 ```
 
 #### **NPM**
@@ -117,7 +117,6 @@ AUTH_JWT_REFRESH_TOKEN_SECRET_KEY=01001231
 AUTH_BASIC_TOKEN_CLIENT_ID=asdzxc
 AUTH_BASIC_TOKEN_CLIENT_SECRET=1234567890
 
-AWS_BUCKET_CREATE_FROM_INIT=false
 AWS_CREDENTIAL_KEY=
 AWS_CREDENTIAL_SECRET=
 AWS_S3_REGION=us-east-2
@@ -130,7 +129,7 @@ For detailed information about the environment, please read this section below
 
 ## Database
 
-!> Mongodb instance must with replication set, cause we need to implement `mongoose transaction.`
+!> If you want to to implement `transaction`, you must to install `Mongodb instance with replication set`.
 
 First, create database `ack` from our App.
 If you don't know how to create mongodb database, [please follow official mongodb instructions](https://www.mongodb.com/basics/create-database).
@@ -180,9 +179,11 @@ npm run rollback
 
 ## Test
 
-ack-nestjs-boilerplate-mongoose only provide `e2e testing`, and use [Jest as testing framework](https://jestjs.io/docs/getting-started).
+ack-nestjs-boilerplate-mongoose provide 2 automation testing `unit testing` and `e2e testing`. ack-nestjs-boilerplate-mongoose use [Jest as testing framework](https://jestjs.io/docs/getting-started).
 
 Just by type this command on our console.
+
+### Unit Testing
 
 <!-- tabs:start -->
 
@@ -199,15 +200,31 @@ npm run test
 ```
 
 <!-- tabs:end -->
+### E2E Testing
 
-And if all steps are followed correctly, the test will be 100% success.
+<!-- tabs:start -->
+
+#### **Yarn**
+
+```bash
+yarn test:e2e
+```
+
+#### **NPM**
+
+```bash
+npm run test:e2e
+```
+
+<!-- tabs:end -->
 
 ## Run Project
 
 > If mongodb version < 5, [please read section for adjust mongoose setting.](/getting-started/adjust-mongoose-setting)
 
-Finally, Cheers 🍻🍻 !!! we passed all steps.\
-Now we can run ack-nestjs-boilerplate-mongoose with yarn and use all of its features.
+Finally, Cheers 🍻🍻 !!! we passed all steps.
+
+Now we can run ack-nestjs-boilerplate-mongoose and use all of its features.
 
 <!-- tabs:start -->
 

@@ -4,7 +4,7 @@ We protect endpoints with specific permissions simply by using `AuthAdminJwtGuar
 
 ## Usage
 
-The example, we will use `AuthAdminJwtGuard` to get user with id
+The example, we will use `AuthAdminJwtGuard`
 
 ```typescript
 // describe permission, only role with USER_READ permission can access

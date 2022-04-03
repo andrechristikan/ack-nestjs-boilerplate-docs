@@ -8,15 +8,17 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 
 ### Production
 
+* DebuggerModule will not write into the console even if `APP_DEBUG` is set to `true`.
+* DebuggerModule will always write into log file.
 * Mongoose debug will not write into the console even if `DATABASE_DEBUG` is set to `true`.
-* Even if the logger setting is enabled, the `DebuggerModule` will not appear in the console. On the other hand, `DebuggerModule`, keeps writing to the file log
-* Cors origin will allow setting on `src/config/config.middleware.ts`.
+* Cors `origin` will allow setting on `src/config/config.middleware.ts`.
 
 ### Development
 
+* DebuggerModule (info/error) will write into the console.
+* DebuggerModule will always write into log file.
 * Mongoose debug will write into the console if `DATABASE_DEBUG` is `true`.
-* `DebuggerModule` will not show in the console, and keep writing into file log.
-* Cors origin will always at `*`.
+* Cors `origin` will always set to `*`.
 
 ## Example environment
 
@@ -47,7 +49,6 @@ AUTH_JWT_REFRESH_TOKEN_SECRET_KEY=01001231
 AUTH_BASIC_TOKEN_CLIENT_ID=asdzxc
 AUTH_BASIC_TOKEN_CLIENT_SECRET=1234567890
 
-AWS_BUCKET_CREATE_FROM_INIT=false
 AWS_CREDENTIAL_KEY=
 AWS_CREDENTIAL_SECRET=
 AWS_S3_REGION=us-east-2
@@ -104,7 +105,6 @@ Description for every environment variable
 
 | Key | Type | Value | Description |
 | ---- | ---- | ---- | ---- |
-| AWS\_BUCKET\_CREATE\_FROM\_INIT | `boolean` | Boolean value | If `true`, app will create bucket |
 | AWS\_CREDENTIAL\_KEY | `string` | Free text | AWS account credential key |
 | AWS\_CREDENTIAL\_SECRET | `string` | Free text | AWS account credential secret |
 | AWS\_S3\_REGION | `string` | AWS S3 region | AWS S3 Region |

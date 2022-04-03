@@ -37,7 +37,7 @@ Exception Filter in ack-nestjs-boilerplate-mongoose will named as `ErrorHttpFilt
 * `GatewayTimeoutException`
 * `PreconditionFailedException`
 
-As long as we use [`Response Decorator`](/features/response?id=response-decorator) or [`Response Paging Decorator`](/features/response?id=response-paging-decorator) Decorator, `ErrorHttpFilter` will also imported. Cause `ErrorHttpFilter` and `Response Decorator` wrap into same group decorator.
+As long as we use [`Response Decorator`](/features/response?id=response-decorator) or [`Response Paging Decorator`](/features/response?id=response-paging-decorator), `ErrorHttpFilter` will also imported. Cause `ErrorHttpFilter` and `Response` wrap into same group decorator.
 
 ```typescript
 import { ResponsePagingInterceptor } from './interceptor/response.paging.interceptor';
@@ -117,6 +117,10 @@ throw new BadRequestException({
 });
 ```
 
+### With properties
+
+<button-jump-to name="Jump To Features Section Language" link="/#/features/language?id=usage-with-properties"></button-jump-to>
+
 ### Custom status code
 
 ```typescript
@@ -132,7 +136,8 @@ throw new BadRequestException({
 throw new BadRequestException({
     statusCode: ENUM_USER_STATUS_CODE_ERROR.USER_EXISTS_ERROR,
     message: 'user.error.exist',
-    data: Record<string, any>
+    data: Record<string, any>,
+    properties: Record<string,string>
 });
 
 // or
@@ -140,7 +145,8 @@ throw new BadRequestException({
 throw new BadRequestException({
     statusCode: ENUM_USER_STATUS_CODE_ERROR.USER_EXISTS_ERROR,
     message: 'user.error.exist',
-    errors: IErrors[]
+    errors: IErrors[],
+    properties: Record<string,string
 });
 
 ```
@@ -153,6 +159,7 @@ export interface IErrorHttpException {
     message: string;
     errors?: IErrors[];
     data?: Record<string, any>;
+    properties?: IMessageOptionsProperties;
 }
 
 export interface IErrors {

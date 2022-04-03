@@ -147,12 +147,13 @@ pipeline {
 
 Description of what Jenkins do in every stage
 
-| Stage   | Description                                                  |
-| ------- | ------------------------------------------------------------ |
-| Prepare | Check dependencies, and pull base image                      |
-| Clone   | Clone git                                                    |
-| Build   | Build image for test and production                          |
-| Test    | Build container and test image with automation testing       |
-| Push    | Push Production image, if test stage passed                  |
-| Deploy  | SSH to server production, and deploy production image into the docker container |
-| Clean   | Clean unnecessary docker images in production server and in Jenkins server |
+| Stage    | Description                                                  |
+| -------- | ------------------------------------------------------------ |
+| Prepare  | Check dependencies, and pull base image                      |
+| Clone    | Clone git                                                    |
+| Build    | Build image                                                  |
+| Test     | Unit Test                                                    |
+| E2E Test | E2E Test                                                     |
+| Push     | Push image into docker hub registry                          |
+| Deploy   | Deploy image into server target                              |
+| Clean    | Clean unnecessary docker images and containers               |

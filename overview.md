@@ -8,7 +8,7 @@ ack-nestjs-boilerplate-mongoose has some objectives including :
 
 - Simple and secure
 - Avoid spaghetti code
-- Component-based folder structure
+- Component based
 - Reusable component
 - Easy to maintenance
 
@@ -27,11 +27,12 @@ Describes which version of the main packages and main tools.
 
 | Name       | Version  |
 | ---------- | -------- |
-| NestJs     | v8.2.5   |
+| NestJs     | v8.4.3   |
 | NodeJs     | v17.3.0  |
-| Typescript | v4.5.4   |
-| Mongoose   | v6.1.6   |
+| Typescript | v4.6.3   |
+| Mongoose   | v6.2.9   |
 | MongoDB    | v5.0.4   |
-| Yarn       | v1.22.17 |
+| Yarn       | v1.22.15 |
+| NPM        | v8.3.0   |
 | Docker     | 20.10.12 |
-| Docker Compose | 1.27.4   |
+| Docker Compose | 2.2.3   |

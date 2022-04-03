@@ -15,7 +15,7 @@ Check docker is successful installed.
 docker --version
 
 # will return 
-# Docker version 20.10.12, build e91ed5707e
+# Docker version 20.10.12, build e91ed57
 ```
 
 Check docker compose is successful installed.
@@ -24,7 +24,7 @@ Check docker compose is successful installed.
 docker-compose --version
 
 # will return
-# docker-compose version 1.27.4, build 40524192
+# Docker Compose version v2.2.3
 ```
 
 ## Clone Repo
@@ -54,11 +54,11 @@ APP_VERSIONING=false
 APP_DEBUG=false
 APP_TZ=Asia/Jakarta
 
-DATABASE_HOST=localhost:27017
+DATABASE_HOST=mongodb:27017
 DATABASE_NAME=ack
-DATABASE_USER=
-DATABASE_PASSWORD=
-DATABASE_ADMIN=false
+DATABASE_USER=root
+DATABASE_PASSWORD=123456
+DATABASE_ADMIN=true
 DATABASE_SRV=false
 DATABASE_DEBUG=false
 DATABASE_SSL=false
@@ -70,7 +70,6 @@ AUTH_JWT_REFRESH_TOKEN_SECRET_KEY=01001231
 AUTH_BASIC_TOKEN_CLIENT_ID=asdzxc
 AUTH_BASIC_TOKEN_CLIENT_SECRET=1234567890
 
-AWS_BUCKET_CREATE_FROM_INIT=false
 AWS_CREDENTIAL_KEY=
 AWS_CREDENTIAL_SECRET=
 AWS_S3_REGION=us-east-2
@@ -79,12 +78,12 @@ AWS_S3_BUCKET=acks3
 
 For detail information about environment, please read this section below
 
-<button-jump-to name="Jump To Usage Documentation" link="/#/usage/readme"></button-jump-to>
+<button-jump-to name="Jump To Features" link="/#/features/readme"></button-jump-to>
 
 ## Run Project
 
 Run project docker compose.
 
 ```bash
-docker-compose up
+docker-compose up -d
 ```

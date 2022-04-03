@@ -21,7 +21,7 @@ Let us make inheritance between services into the controller. Take a look at ack
 
 ## Response Type
 
-In ack-nestjs-boilerplate-mongoose we use `@Response` decorator or `@ResponsePaging` decorator to return our response with/without data. But sometimes we forgot to set `Response Type`
+In ack-nestjs-boilerplate-mongoose we use `Response Decorator` or `Response Paging Decorator` to return our response with/without data. But sometimes we forgot to set `Response Type`
 
 ```typescript
 @Controller({
@@ -105,7 +105,7 @@ async get(@GetUser() user: IUserDocument): Promise<IResponse> {
 
 ### Debugger Module
 
-!>Use docker with caution. While the container is down/removed, Docker will erase all container data. We will lose the log file if we do not mount volume '/app/logs' in the container with our '/logs' in the host.
+Catch every thing is app.
 
 ```typescript
 export default registerAs(
@@ -135,7 +135,7 @@ Actually, `DebuggerModule` divides into 2 modules
 
 #### DebuggerModule
 
-Like console, but with the ability to write to a file. This serves the purpose of debugging everything that we want to catch. This is useful in the debugger or when tracking our data flow.
+Like `console.log`, but with the ability to write into a file. This serves the purpose of debugging everything that we want. This is useful when tracking our data flow in debug mode.
 
 #### HttpDebuggerModule
 
@@ -143,5 +143,4 @@ A module that can catch all incoming requests and responses.
 
 ### Logger Module
 
-The logger module's purpose is to save logs to a database, which will then be used by our data scientist.
-
+The logger module's purpose is to save logs into a database, which will then be used by our data scientist.

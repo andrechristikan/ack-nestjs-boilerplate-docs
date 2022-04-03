@@ -1,8 +1,6 @@
 # Response
 
-> `Response Decorator` and `Response Paging Decorator` will restructure success response.
-
-ack-nestjs-boilerplate-mongoose using `Response Decorator`. `Response Decorator` consumes `interceptor` from `@nestjs/common` and wraps it in the decorator. Location in `src/utils/response/interceptor/*`. The goal of the response decorator is to centralize and restructure the successful response. That can be easy to maintain or change if necessary.
+To restructure the success response ack-nestjs-boilerplate-mongoose consumes `interceptor` from `@nestjs/common` and wraps it in the decorator. Location in `src/utils/response/interceptor/*`.
 
 ```txt
 src
@@ -13,14 +11,16 @@ src
                 └── response.paging.interceptor.ts
 ```
 
-Response decorator is divided into 2 decorators.
+Response is divided into 2 decorators.
+
+> `Response Decorator` and `Response Paging Decorator` will restructure success response.
 
 * `@Response` for default usage.
 * `@ResponsePaging` for paging usage.
 
 ## Response Decorator
 
-`@Response` is a group decorator that wrap `ResponseDefaultInterceptor`
+`Response Decorator` is a group decorator that wrap `ResponseDefaultInterceptor`
 
 ```typescript
 import { ResponseDefaultInterceptor } from './interceptor/response.default.interceptor';
@@ -39,7 +39,7 @@ export function Response(messagePath: string, statusCode?: number): any {
 
 #### Default usage
 
-`@Response` without data.
+Without data.
 
 ```typescript
 import { Response } from 'src/utils/response/response.decorator';
@@ -53,7 +53,7 @@ async hello(): Promise<void> {
 
 #### With Data
 
-`@Response` also works with data, just by giving return value.
+Also works with data, just by giving return value.
 
 ```typescript
 import { Response } from 'src/utils/response/response.decorator';
@@ -78,7 +78,7 @@ export type IResponse = Record<string, any>;
 
 ## Response Paging Decorator
 
-`@ResponsePaging` is a group decorator that wrap `ResponsePagingInterceptor`&#x20;
+`Response Paging Decorator` is a group decorator that wrap `ResponsePagingInterceptor`
 
 ```typescript
 import { ResponsePagingInterceptor } from './interceptor/response.paging.interceptor';
@@ -96,7 +96,7 @@ export function ResponsePaging(messagePath: string, statusCode?: number): any {
 
 !> Don't forget to set the return type of promise
 
-`@ResponsePaging` return type will be used for server-side paging.
+`Response Paging Decorator` return type will be used for server-side paging.
 
 ```typescript
 import { ResponsePaging } from 'src/utils/response/response.decorator';
@@ -134,7 +134,7 @@ export interface IResponsePaging {
 
 ## Custom Status Error
 
-By default, `StatusCode` is the same as HttpStatus. However, both of `@Reponse` and `@ResponsePaging` can specify a custom for StatusCode. Simply enter `number or string value` in the 2nd param.
+By default, `StatusCode` is the same as `HttpStatus`. However, both of `Response Decorator` or `Response Paging Decorator` can specify a custom for StatusCode. Simply enter `number or string value` in the 2nd param.
 
 ```typescript
 import { Response } from 'src/utils/response/response.decorator';

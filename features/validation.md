@@ -2,7 +2,7 @@
 
 > `RequestValidationPipe` will validates all incoming requests based on `ClassValidator`
 
-ack-nestjs-boilerplate-mongoose combine `class-validator` with `NestJs Pipe` for create `RequestValidationPipe`. `RequestValidationPipe` is a pipe validator for the incoming request. Location in `src/utils/request/pipe/request.validation.pipe.ts`
+ack-nestjs-boilerplate-mongoose combine `class-validator` with `NestJs Pipe` for create `RequestValidationPipe`. Location in `src/utils/request/pipe/request.validation.pipe.ts`
 
 ## Request Validation Pipe
 
@@ -84,7 +84,7 @@ export class AuthController {
 }
 ```
 
-if the error response will look like this
+`RequestValidationPipe` will pass error into `ErrorHttpFilter`, so the response will look like
 
 ```json
 {
@@ -92,22 +92,17 @@ if the error response will look like this
     "message": "Request validation errors",
     "errors": [
         {
-            "message": "{property} should be a type of email",
+            // "message": "{property} should be a type of email",
+            "message": "Email field should be a type of email",
             "property": "email"
         }
     ]
 }
 ```
 
-### Interface
+### Interface of errors
 
 ```typescript
-export interface IErrorHttpException {
-    statusCode: number;
-    message: string;
-    errors: IErrors[];
-}
-
 export interface IErrors {
     readonly message: string;
     readonly property: string;

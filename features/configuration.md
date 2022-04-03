@@ -15,7 +15,7 @@ src
       └── *
 ```
 
-We don't need to import ConfigModule for every modules, that because stored in `global variable`. Import into our `CoreModule`
+We don't need to import ConfigModule for every modules, that because stored as `global module`.
 
 ```typescript
 import { ConfigModule } from '@nestjs/config';

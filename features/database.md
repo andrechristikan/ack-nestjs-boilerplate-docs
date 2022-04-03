@@ -1,8 +1,10 @@
 # Database
 
-[MongoDB](https://www.mongodb.com) is one of the popular no sql database. [Mongoose](https://mongoosejs.com) is a package that integrates NodeJs and MongoDB. Mongoose provides an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code in mongoose.
+[MongoDB](https://www.mongodb.com) is one of the popular no sql database. [Mongoose](https://mongoosejs.com) is a package that integrates NodeJs and MongoDB. Mongoose provides an elegant way to write MongoDB object modeling for NodeJs. We can fully control our database by writing code with mongoose.
 
-## Database Integration
+## Mongoose
+
+### Integration
 
 ack-nestjs-boiler-mongoose already integrated with `mongodb` and we already provide `config` to control the settings of database. Location in `src/config/database.config.ts`.
 
@@ -25,7 +27,7 @@ export default registerAs(
 );
 ```
 
-and also for dynamic configuration, ack-nestjs-boiler-mongoose put configuration as `env`.
+and also for dynamic configuration, ack-nestjs-boiler-mongoose put configuration in `env`.
 
 ```txt
 DATABASE_HOST=localhost:27017
@@ -41,28 +43,27 @@ DATABASE_OPTIONS=
 
 Simply if we want to change database, we just need to change the env.
 
-### Mongoose
 
-#### Mongoose Populate and Deep Populate
+### Populate and Deep Populate
 
 `Populate` is similar as `lookup in mongodb` or `join in mysql`. To do populate in mongoose do as follows.
 
-##### Populate
+#### Populate
 
-Role have some permission
+Example, we want populate role with permissions
 
 ```typescript
 this.roleModel.findOne(find).populate({
-    path: 'permissions', // <--- path/field in role collection
+    path: 'permissions', // <--- path is field in role collection
     model: PermissionEntity.name, // <--- model of permission
 });
 ```
 
-##### Deep Populate
+#### Deep Populate
 
 > We can also do deep populate to deepest populate as many times as we want.
 
-Of course, we can do deeply
+Example, Get user with role and permissions.
 
 ```typescript
 this.userModel.findOne(find).populate({
@@ -71,6 +72,7 @@ this.userModel.findOne(find).populate({
     populate: { // <--- add deep populate
         path: 'permissions',
         model: PermissionEntity.name,
+
         populate: { // <--- can add repeat populate / deepest populate
             ...
             ...
@@ -80,9 +82,9 @@ this.userModel.findOne(find).populate({
 });
 ```
 
-#### Mongoose Transaction
+### Transaction
 
-!> require mongodb as replication
+!> require mongodb as replication set
 
 The scenario is `delete our user`.
 
@@ -136,14 +138,17 @@ The scenario is `delete our user`.
 3. Edit UserService to use  `Transaction session mongoose`
 
     ```typescript
-    async deleteOneById(_id: string, session: mongodb.ClientSession): Promise<boolean> {
-        return this.userModel.findOneAndDelete({
-            _id: new Types.ObjectId(_id),
-        }, { session });
+
+    export class UserService {
+        async deleteOneById(_id: string, session: mongodb.ClientSession): Promise<boolean> {
+            return this.userModel.findOneAndDelete({
+                _id: new Types.ObjectId(_id),
+            }, { session });
+        }
     }
     ```
 
-4. User Controller
+4. Use UserService like this
 
     ```typescript
     import { Connection } from 'mongoose';
@@ -192,7 +197,7 @@ The scenario is `delete our user`.
     }
     ```
 
-## Database Migration
+## Migration
 
 ack-nestjs-boilerplate-mongoose use `nestjs-command` package.
 

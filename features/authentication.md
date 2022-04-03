@@ -1,7 +1,6 @@
-# Authorization
+# Authentication
 
 [OAuth 2.0](https://oauth.net/2/) is the industry-standard protocol for authorization. This is used to describe the user. ack-nestjs-boilerplate-mongoose combine between `@nestjs/jwt` and `@nestjs/passport` to implement `OAuth2`.
-As we know, OAuth has 2 token `accessToken` and `RefreshToken`.
 
 The config of access token will be put in `src/config/auth.config.ts`
 
@@ -42,9 +41,9 @@ export default registerAs(
 
 ## Access Token
 
-> Access token create in `login endpoint`
+> Access token create in `login endpoint` or `refresh endpoint`
 
-The access token will have `30 minutes` to active and then we must refresh the access token. The access token will separate into 2 guards `AuthPublicJwtGuard` and `AuthAdminJwtGuard.
+The access token will have `30 minutes` to active and then we must refresh the access token. The access token will check if we use `AuthPublicJwtGuard` and `AuthAdminJwtGuard`.
 
 These guards will check based on `payload user`.
 
@@ -91,11 +90,11 @@ async get(): Promise<string> {
 
 ## Refresh Token
 
-> Refresh token create in `refresh endpoint`
+> Refresh token create in `login endpoint` or `refresh endpoint`
 
-The refresh token can be used after the access token has expired or `30 minutes after the access token was created`, the refresh token will be valid for `7 days.` If`rememberMe` in the login endpoint is set to `true`, the refresh token will be valid for `200 days`. Refresh Token will be used to refresh the access token if it expires, eliminating the need to re-login.
+The refresh token can be used after the access token has expired or `30 minutes after the access token was created`, the refresh token will be valid for `7 days` or if `rememberMe` in the login endpoint is set to `true` then the refresh token will be valid for `30 days`. Refresh Token will be used to refresh the access token if it expired.
 
-Refresh token will put into guard `AuthRefreshJwtGuard`
+Refresh token will check if we use `AuthRefreshJwtGuard`
 
 ### Usage
 
