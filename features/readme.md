@@ -33,14 +33,11 @@ APP_VERSIONING=false
 APP_DEBUG=false
 APP_TZ=Asia/Jakarta
 
-DATABASE_HOST=localhost:27017
+DATABASE_HOST=mongodb://localhost:27017
 DATABASE_NAME=ack
 DATABASE_USER=
 DATABASE_PASSWORD=
-DATABASE_ADMIN=false
-DATABASE_SRV=false
 DATABASE_DEBUG=false
-DATABASE_SSL=false
 DATABASE_OPTIONS=
 
 AUTH_JWT_ACCESS_TOKEN_SECRET_KEY=123456
@@ -77,14 +74,11 @@ Description for every environment variable
 
 | Key | Type | Value | Description |
 | ---- | ---- | ---- | ----|
-| DATABASE\_HOST | `string` | `localhost:27017` or `localhost:27017,localhost:27018,localhost:27019` | Database url, representative mongoose url |
+| DATABASE\_HOST | `string` | `mongodb://localhost:27017` | Database url, representative mongoose url |
 | DATABASE\_NAME | `string` | Database name | Database name |
 | DATABASE\_USER | `string` | Database user | Our user for accessing the database |
 | DATABASE\_PASSWORD | `string` | Database user password | User Password |
-| DATABASE\_ADMIN | `boolean` | Boolean value | Mongoose admin option |
-| DATABASE\_SRV | `boolean` | Boolean value | `Mongoose url will add with srv in beginning` by default if value is `true` |
 | DATABASE\_DEBUG | `boolean` | Boolean value | Mongoose debug mode |
-| DATABASE\_SSL | `boolean` | Boolean value | Mongoose SSL option |
 | DATABASE\_OPTIONS | `string` | Mongoose options value | Other mongoose options |
 
 #### **Auth Environment**
