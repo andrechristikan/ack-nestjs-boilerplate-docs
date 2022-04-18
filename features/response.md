@@ -27,8 +27,7 @@ import { ResponseDefaultInterceptor } from './interceptor/response.default.inter
 
 export function Response(messagePath: string, statusCode?: number): any {
     return applyDecorators(
-        UseInterceptors(ResponseDefaultInterceptor(messagePath, statusCode)),
-        UseFilters(ErrorHttpFilter)
+        UseInterceptors(ResponseDefaultInterceptor(messagePath, statusCode))
     );
 }
 ```
@@ -85,8 +84,7 @@ import { ResponsePagingInterceptor } from './interceptor/response.paging.interce
 
 export function ResponsePaging(messagePath: string, statusCode?: number): any {
     return applyDecorators(
-        UseInterceptors(ResponsePagingInterceptor(messagePath, statusCode)),
-        UseFilters(ErrorHttpFilter)
+        UseInterceptors(ResponsePagingInterceptor(messagePath, statusCode))
     );
 }
 
@@ -107,7 +105,7 @@ import { IResponsePaging } from 'src/utils/response/response.interface';
 @Get('/list')
 async list(
     @Query(RequestValidationPipe)
-    { page, perPage, sort, search }: PermissionListValidation
+    { page, perPage, sort, search, availableSort, availableSearch }: PermissionListValidation
 ): Promise<IResponsePaging> { // <--- don't forget to set to IResponsePaging
 
     return {
@@ -115,6 +113,8 @@ async list(
         totalPage,
         currentPage: page,
         perPage,
+        availableSearch,
+        availableSort,
         data,
     };
 }
@@ -128,6 +128,8 @@ export interface IResponsePaging {
     totalPage: number;
     currentPage: number;
     perPage: number;
+    availableSearch?: string[];
+    availableSort: string[];
     data: Record<string, any>[];
 }
 ```
