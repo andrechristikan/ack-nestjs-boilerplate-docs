@@ -29,7 +29,7 @@ import { MessageService } from 'src/message/message.service';
 export class MessageModule {}
 ```
 
-and then, we import it into our `CoreModule`
+and then, we import it into our `BaseModule`
 
 ```typescript
 import { MessageModule } from 'src/message/message.module';
@@ -51,7 +51,7 @@ import { MessageModule } from 'src/message/message.module';
         ...
     ],
 })
-export class CoreModule {}
+export class BaseModule {}
 ```
 
 ## Usage
@@ -219,13 +219,7 @@ export enum ENUM_MESSAGE_LANGUAGE {
 We can see or change the default from `.env` file
 
 ```txt
-APP_ENV=development
-APP_HOST=localhost
-APP_PORT= 3000
 APP_LANGUAGE=en
-APP_VERSIONING=false
-APP_DEBUG=false
-APP_TZ=Asia/Jakarta
 
 ...
 ...

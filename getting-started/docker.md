@@ -15,7 +15,7 @@ Check docker is successful installed.
 docker --version
 
 # will return 
-# Docker version 20.10.12, build e91ed57
+# Docker version 20.x
 ```
 
 Check docker compose is successful installed.
@@ -24,7 +24,7 @@ Check docker compose is successful installed.
 docker-compose --version
 
 # will return
-# Docker Compose version v2.2.3
+# Docker Compose version v2.x
 ```
 
 ## Clone Repo

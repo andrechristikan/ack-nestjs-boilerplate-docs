@@ -1,21 +1,22 @@
 # Overview
 
-ack-nestjs-boilerplate-mongoose is a [NestJs](http://nestjs.com) Boilerplate with [Mongoose](https://mongoosejs.com) and [MongoDB](https://docs.mongodb.com) as Database. 
+ack-nestjs-boilerplate-mongoose is a [NestJs](http://nestjs.com) Boilerplate with [Mongoose](https://mongoosejs.com) and [MongoDB](https://docs.mongodb.com) as Database.
 
 Made with following
-- [nodejs-best-practice](https://github.com/goldbergyoni/nodebestpractices)
+- [nodejs-best-practice](https://github.com/goldbergyoni/nodebestpractices) 
 - [The Twelve-Factor App](https://12factor.net)
-- NestJs Habit as the benchmark.
+- NestJs Habit.
 
 ## Objective
 
-ack-nestjs-boilerplate-mongoose has some objectives including :
+ack-nestjs-boilerplate-mongoose have some objective.
 
-- Simple and secure
+- Simple, scalable and secure
 - Avoid spaghetti code
 - Component based
 - Reusable component
 - Easy to maintenance
+- Support for all microservice patterns
 
 ## Prerequisites
 
@@ -32,12 +33,12 @@ Describes which version of the main packages and main tools.
 
 | Name       | Version  |
 | ---------- | -------- |
-| NestJs     | v8.4.3   |
-| NodeJs     | v17.3.0  |
-| Typescript | v4.6.3   |
-| Mongoose   | v6.2.9   |
-| MongoDB    | v5.0.4   |
-| Yarn       | v1.22.15 |
-| NPM        | v8.3.0   |
-| Docker     | 20.10.12 |
-| Docker Compose | 2.2.3   |
+| NestJs     | v8.x     |
+| NodeJs     | v17.x    |
+| Typescript | v4.x     |
+| Mongoose   | v6.x     |
+| MongoDB    | v5.x     |
+| Yarn       | v1.x     |
+| NPM        | v8.x     |
+| Docker     | v20.x    |
+| Docker Compose | v2.x |

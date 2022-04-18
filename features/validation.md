@@ -1,12 +1,19 @@
 # Validation
 
-> `RequestValidationPipe` will validates all incoming requests based on `ClassValidator`
+> Store as global module
 
-ack-nestjs-boilerplate-mongoose combine `class-validator` with `NestJs Pipe` for create `RequestValidationPipe`. Location in `src/utils/request/pipe/request.validation.pipe.ts`
+ack-nestjs-boilerplate-mongoose consume NestJs validation pipe. `ValidationPipe` will validates all incoming requests based on `ClassValidator`. Location in `src/utils/request/request.module.ts`
 
-## Request Validation Pipe
+```txt
+src
+  └── utils
+      └── request 
+          └── request.module.ts
+```
 
-To use `RequestValidationPipe` we need to create `ClassValidator` as a validator for our request.
+## Validation Pipe
+
+To use `ValidationPipe` we need to create `ClassValidator` as a validator for our request.
 
 ```typescript
 import { Type } from 'class-transformer';
@@ -20,7 +27,7 @@ import {
     IsString,
 } from 'class-validator';
 
-export class AuthLoginValidation {
+export class AuthLoginDto {
     @IsEmail()
     @IsNotEmpty()
     @MaxLength(100)
@@ -39,25 +46,7 @@ export class AuthLoginValidation {
 
 ```
 
-Then we need to add `ClassValidator` to the whitelist of `RequestValidationPipe` .
-
-```typescript
-export class RequestValidationPipe implements PipeTransform {
-
-    ...
-    ...
-    ...
-    
-    private toValidate(metatype: Record<string, any>): boolean {
-        const types: Record<string, any>[] = [
-            AuthLoginValidation // <--- add into here
-        ];
-        return types.includes(metatype);
-    }
-}
-```
-
-Then put `ClassValidator` as type of `@Body`/`@Query` in `Controller`, and don't forget to put `RequestValidationPipe` too as pipe.
+Then put `ClassValidator` as type of `@Body`/`@Query`/`@Param` in `Controller`.
 
 ```typescript
 @Controller({
@@ -73,7 +62,7 @@ export class AuthController {
     @HttpCode(HttpStatus.OK)
     @Post('/login')
     async login( 
-        @Body(RequestValidationPipe) body: AuthLoginValidation // <--- use like this
+        @Body() body: AuthLoginValidation // <--- use like this
     ): Promise<IResponse> {
     
     ...
@@ -84,7 +73,7 @@ export class AuthController {
 }
 ```
 
-`RequestValidationPipe` will pass error into `ErrorHttpFilter`, so the response will look like
+`ValidationPipe` will pass error into `ErrorHttpFilter`, so the response will look like
 
 ```json
 {

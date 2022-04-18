@@ -30,7 +30,7 @@ import { ConfigModule } from '@nestjs/config';
             ignoreEnvFile: false,
             isGlobal: true, // <--- Import as global
             cache: true,
-            envFilePath: ['.env', '.env.share'],
+            envFilePath: ['.env'],
         }),
         
         ...

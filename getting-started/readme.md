@@ -17,7 +17,7 @@ Check that NodeJs has been installed successfully.
 node --version
 
 # will return 
-# v17.3.0
+# v17.x
 ```
 
 Check MongoDB has been successfully installed.
@@ -26,7 +26,7 @@ Check MongoDB has been successfully installed.
 mongod --version
 
 # will return 
-# db version v5.0.4
+# db version v5.x
 ```
 
 Check package manager `yarn` or `npm` is successfully installed.
@@ -39,7 +39,7 @@ Check package manager `yarn` or `npm` is successfully installed.
 yarn --version
 
 # will return 
-# 1.22.15
+# 1.x
 ```
 
 #### **NPM**
@@ -48,7 +48,7 @@ yarn --version
 npm --version
 
 # will return 
-# 8.3.0
+# 8.x
 ```
 <!-- tabs:end -->
 
@@ -176,7 +176,7 @@ npm run rollback
 
 ## Test
 
-ack-nestjs-boilerplate-mongoose provide 2 automation testing `unit testing` and `e2e testing`. ack-nestjs-boilerplate-mongoose use [Jest as testing framework](https://jestjs.io/docs/getting-started).
+ack-nestjs-boilerplate-mongoose provide 3 automation testing `unit testing`, `integration testing`, and `e2e testing`. ack-nestjs-boilerplate-mongoose use [Jest as testing framework](https://jestjs.io/docs/getting-started).
 
 Just by type this command on our console.
 
@@ -197,6 +197,25 @@ npm run test
 ```
 
 <!-- tabs:end -->
+
+### Integration Testing
+
+<!-- tabs:start -->
+
+#### **Yarn**
+
+```bash
+yarn test:integration
+```
+
+#### **NPM**
+
+```bash
+npm run test:integration
+```
+
+<!-- tabs:end -->
+
 ### E2E Testing
 
 <!-- tabs:start -->

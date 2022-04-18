@@ -67,7 +67,7 @@ this.userModel.findOne(find).populate({
         path: 'permissions',
         model: PermissionEntity.name,
 
-        populate: { // <--- can add repeat populate / deepest populate
+        populate: { // <--- can add repeat populate, deepest populate
             ...
             ...
             ...
@@ -158,6 +158,7 @@ The scenario is `delete our user`.
     
         @Response('user.delete')
         @UserDeleteGuard()
+        @RequestParamGuard(UserRequestDto)
         @AuthAdminJwtGuard(ENUM_PERMISSIONS.USER_READ, ENUM_PERMISSIONS.USER_DELETE)
         @Delete('/delete/:user')
         async transaction(

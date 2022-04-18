@@ -12,6 +12,7 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 * DebuggerModule will always write into log file.
 * Mongoose debug will not write into the console even if `DATABASE_DEBUG` is set to `true`.
 * Cors `origin` will allow setting on `src/config/config.middleware.ts`.
+* User upload path to `/user` prefix.
 
 ### Development
 
@@ -19,6 +20,7 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 * DebuggerModule will always write into log file.
 * Mongoose debug will write into the console if `DATABASE_DEBUG` is `true`.
 * Cors `origin` will always set to `*`.
+* User upload path to `test/user` prefix.
 
 ## Example environment
 

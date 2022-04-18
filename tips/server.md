@@ -93,7 +93,27 @@ What is CI/CD? you can read and search advantage in google. Go ahead.
 
 > Keyword: `Advantage of CI-CD`
 
-The popular tool that we choose is `Jenkins`
+The popular tool that we choose is `Github Action` or `Jenkins`. You can choose what ever you want. Our recommendation to use `Github Action`.
+
+### Github Action
+
+We provide CI, CD, and others automation script in separate file.
+
+> Location in `.github/workflows/*`.
+
+You can adjust some `environment` and `secret` with change directly or from `account settings` or `organization settings`.
+
+#### Github Description
+
+Description of what github workflow do per-files.
+
+| File          | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| cd.yml        | Deploy our docker image into server target           |
+| ci.yml        | Create production image and push into docker hub     |
+| linter.yml    | Check linter                                         |
+| release.yml   | Release base on version from `package.json` file     |
+| test.yml      | Automation Unit Test, Integration Test, and E2E Test |
 
 ### Jenkins Pipeline
 
@@ -114,7 +134,7 @@ pipeline {
 
         APP_NAME = 'ack' // this will be container name
         APP_NETWORK = 'app-network' // this network name
-        APP_PORT = 3000 // the application will serve in port 0.0.0.0:3000
+        APP_PORT = 3000 // this project will serve in port 0.0.0.0:3000
         
         NODE_JS = 'lts' // depends with our jenkins setting 
 
@@ -129,7 +149,6 @@ pipeline {
         GIT = 'Default' // depends with our jenkins setting
         GIT_BRANCH = 'main' // git branch
         GIT_CREDENTIAL = '86535ad6-5d74-48c0-9852-bddbe1fbaff6' // depends with our credentials jenkins 
-        GIT_URL = 'https://github.com/andrechristikan/ack-nestjs-mongoose.git' // git url
     }
     tools {
         nodejs NODE_JS
@@ -143,17 +162,18 @@ pipeline {
 }
 ```
 
-#### Jenkins Stage Pipeline
+#### Jenkins Description
 
 Description of what Jenkins do in every stage
 
-| Stage    | Description                                                  |
-| -------- | ------------------------------------------------------------ |
-| Prepare  | Check dependencies, and pull base image                      |
-| Clone    | Clone git                                                    |
-| Build    | Build image                                                  |
-| Test     | Unit Test                                                    |
-| E2E Test | E2E Test                                                     |
-| Push     | Push image into docker hub registry                          |
-| Deploy   | Deploy image into server target                              |
-| Clean    | Clean unnecessary docker images and containers               |
+| Stage    | Description                                                    |
+| -------- | -------------------------------------------------------------- |
+| Prepare  | `Check dependencies`, and `pull base image` from docker hub    |
+| Clone    | Clone git                                                      |
+| Build    | `Build test image`                                             |
+| Test     | Unit Test                                                      |
+| Integration Test     | Integration Test                                   |
+| E2E Test | E2E Test                                                       |
+| Push     | `Build production image` and `push image into docker hub registry` |
+| Deploy   | Deploy image into server target                                |
+| Clean    | Clean unnecessary docker images and containers from server target and server jenkins |

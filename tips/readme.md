@@ -2,17 +2,41 @@
 
 Tips for use ack-nestjs-boilerplate-mongoose.
 
-## Function Decorator Ordering
+## Incoming Request
+
+Now ack-nestjs-boilerplate-mongoose have `required` request headers.
+
+1. `x-timestamp`, tolerant 5 minutes of request.
+2. `user-agent`, whitelist of user agent.
+
+You can see our `e2e testing file`.
+
+## Decorator Ordering
 
 We recognize that our decorator occasionally causes the app to malfunction. So, to resolve that issue, you can use the following suggestions.
 
 ```typescript
 @Response()
 @UserDeleteGuard()
+@RequestParamGuard()
 @AuthAdminJwtGuard()
 @HttpCode()
 @Post()
 ```
+
+## Validation Params
+
+In previous, we recognize param as `_id` sometimes can make our application crash because we do not validate it. ~~Actually, we forgot xD~~. So we provide example for that, named as `RequestParamGuard`.
+
+```typescript
+export function RequestParamGuard(classValidation: ClassConstructor<any>): any {
+    return applyDecorators(UseGuards(ParamGuard(classValidation)));
+}
+```
+
+## Abstract Class Pagination
+
+Always implement abstract class for pagination
 
 ## Independent Service
 

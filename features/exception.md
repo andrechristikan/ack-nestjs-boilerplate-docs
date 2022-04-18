@@ -1,6 +1,8 @@
 
 # Exception
 
+> Store as global module
+
 ack-nestjs-boilerplate-mongoose used `Exception Filter` module from `@nestjs/common` and the location is in `src/utils/error/error.filter.ts`.
 
 ```txt
@@ -8,6 +10,7 @@ src
   └── utils
       └── error 
           └── error.filter.ts
+          └── error.module.ts
 ```
 
 ## Error Http Filter
@@ -37,17 +40,23 @@ Exception Filter in ack-nestjs-boilerplate-mongoose will named as `ErrorHttpFilt
 * `GatewayTimeoutException`
 * `PreconditionFailedException`
 
-As long as we use [`Response Decorator`](/features/response?id=response-decorator) or [`Response Paging Decorator`](/features/response?id=response-paging-decorator), `ErrorHttpFilter` will also imported. Cause `ErrorHttpFilter` and `Response` wrap into same group decorator.
+`ErrorHttpFilter` will import into `ErrorModule`. Location in `src/utils/error/error.module.ts`
 
 ```typescript
-import { ResponsePagingInterceptor } from './interceptor/response.paging.interceptor';
-
-export function ResponsePaging(messagePath: string, statusCode?: number): any {
-    return applyDecorators(
-        UseInterceptors(ResponsePagingInterceptor(messagePath, statusCode)),
-        UseFilters(ErrorHttpFilter) // <--- here
-    );
-}
+@Module({
+    controllers: [],
+    providers: [
+        {
+            provide: APP_FILTER,
+            inject: [MessageService],
+            useFactory: (messageService: MessageService) => {
+                return new ErrorHttpFilter(messageService);
+            },
+        },
+    ],
+    imports: [],
+})
+export class ErrorModule {}
 ```
 
 ## Usage
@@ -63,8 +72,8 @@ import { BadRequestException } from '@nestjs/common';
 @AuthAdminJwtGuard(ENUM_PERMISSIONS.USER_READ, ENUM_PERMISSIONS.USER_CREATE)
 @Post('/create')
 async create(
-    @Body(RequestValidationPipe)
-    body: UserCreateValidation
+    @Body()
+    body: UserCreateDto
 ): Promise<IResponse> {
     const checkExist: IUserCheckExist = await this.userService.checkExist(
         body.email,
@@ -137,7 +146,7 @@ throw new BadRequestException({
     statusCode: ENUM_USER_STATUS_CODE_ERROR.USER_EXISTS_ERROR,
     message: 'user.error.exist',
     data: Record<string, any>,
-    properties: Record<string,string>
+    properties: Record<string, string>
 });
 
 // or
@@ -146,7 +155,7 @@ throw new BadRequestException({
     statusCode: ENUM_USER_STATUS_CODE_ERROR.USER_EXISTS_ERROR,
     message: 'user.error.exist',
     errors: IErrors[],
-    properties: Record<string,string
+    properties: Record<string, string>
 });
 
 ```

@@ -9,18 +9,23 @@ Go to file `src/database/database.service.ts` and add `useMongoClient` then set 
 ...
 ...
 
-mongoose.set('debug', this.debug);
+if (this.env !== 'production') {
+    mongoose.set('debug', this.debug);
+}
 
 const mongooseOptions: MongooseModuleOptions = {
     uri,
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,
     useMongoClient: true  // <<<<---- add this or uncomment this
 };
 
-
-if (this.admin) {
-    mongooseOptions.authSource = 'admin';
+if (this.user && this.password) {
+    mongooseOptions.auth = {
+        username: this.user,
+        password: this.password,
+    };
 }
 
 ...
