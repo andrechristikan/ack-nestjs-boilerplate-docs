@@ -8,18 +8,38 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 
 ### Production
 
+> value `production`
+
 * DebuggerModule will not write into the console even if `APP_DEBUG` is set to `true`.
 * DebuggerModule will always write into log file.
 * Mongoose debug will not write into the console even if `DATABASE_DEBUG` is set to `true`.
 * Cors `origin` will allow setting on `src/config/config.middleware.ts`.
+* Timestamp middleware on.
+* User Agent middleware on.
 * User upload path to `/user` prefix.
 
+### Staging
+
+> value `staging`
+
+* DebuggerModule will not write into the console even if `APP_DEBUG` is set to `true`.
+* DebuggerModule will always write into log file.
+* Mongoose debug will not write into the console even if `DATABASE_DEBUG` is set to `true`.
+* Cors `origin` will allow setting on `src/config/config.middleware.ts`.
+* Timestamp middleware on.
+* User Agent middleware on.
+* User upload path to `test/user` prefix.
+
 ### Development
+
+> value `development`
 
 * DebuggerModule (info/error) will write into the console.
 * DebuggerModule will always write into log file.
 * Mongoose debug will write into the console if `DATABASE_DEBUG` is `true`.
 * Cors `origin` will always set to `*`.
+* Timestamp middleware off.
+* User Agent middleware off.
 * User upload path to `test/user` prefix.
 
 ## Example environment
@@ -27,6 +47,7 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 Environment location `.env.example`. By default, the environment will look like this.
 
 ```txt
+APP_NAME=ack
 APP_ENV=development
 APP_HOST=localhost
 APP_PORT= 3000
@@ -64,6 +85,7 @@ Description for every environment variable
 
 | Key | Type | Value | Description |
 | ---- | ---- | ---- | ---- |
+| APP\_NAME_ | `string` | name of our app. |
 | APP\_ENV | `string` | <ul><li>production</li><li>development</li><li>testing</li></ul> | Application environment, please read [Getting Started Section](/getting-started/readme) for to know difference between value. |
 | APP\_HOST | `string` | localhost or correct ip | Address that serve our app. |
 | APP\_PORT | `number` | Available port in our system | Port that serve our app. |

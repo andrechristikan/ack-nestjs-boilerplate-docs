@@ -93,6 +93,7 @@ cp .env.example .env
 Then Adjust.
 
 ```txt
+APP_NAME=ack
 APP_ENV=development
 APP_HOST=localhost
 APP_PORT= 3000
