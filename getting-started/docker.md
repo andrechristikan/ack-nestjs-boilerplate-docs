@@ -46,6 +46,7 @@ cp .env.docker .env
 Then adjust.
 
 ```txt
+APP_NAME=ack
 APP_ENV=development
 APP_HOST=0.0.0.0
 APP_PORT= 3000
