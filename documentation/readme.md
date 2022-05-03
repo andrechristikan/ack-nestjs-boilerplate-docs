@@ -2,7 +2,7 @@
 
 ack-nestjs-boilerplate-mongoose use `.env` file with `dotenv` package.
 
-## Environment value
+## APP_ENV
 
 By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 
@@ -13,22 +13,7 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 * DebuggerModule will not write into the console even if `APP_DEBUG` is set to `true`.
 * DebuggerModule will always write into log file.
 * Mongoose debug will not write into the console even if `DATABASE_DEBUG` is set to `true`.
-* Cors `origin` will allow setting on `src/config/config.middleware.ts`.
-* Timestamp middleware on.
-* User Agent middleware on.
 * User upload path to `/user` prefix.
-
-### Staging
-
-> value `staging`
-
-* DebuggerModule will not write into the console even if `APP_DEBUG` is set to `true`.
-* DebuggerModule will always write into log file.
-* Mongoose debug will not write into the console even if `DATABASE_DEBUG` is set to `true`.
-* Cors `origin` will allow setting on `src/config/config.middleware.ts`.
-* Timestamp middleware on.
-* User Agent middleware on.
-* User upload path to `test/user` prefix.
 
 ### Development
 
@@ -37,10 +22,23 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 * DebuggerModule (info/error) will write into the console.
 * DebuggerModule will always write into log file.
 * Mongoose debug will write into the console if `DATABASE_DEBUG` is `true`.
+* User upload path to `test/user` prefix.
+
+## APP_MODE
+
+### COMPLEX
+
+* Cors `origin` will allow setting on `src/config/config.middleware.ts`.
+* Timestamp middleware on.
+* User Agent middleware on.
+* API Key Guard on.
+
+### SIMPLE
+
 * Cors `origin` will always set to `*`.
 * Timestamp middleware off.
 * User Agent middleware off.
-* User upload path to `test/user` prefix.
+* API Key Guard off.
 
 ## Example environment
 
@@ -49,12 +47,14 @@ Environment location `.env.example`. By default, the environment will look like 
 ```txt
 APP_NAME=ack
 APP_ENV=development
+APP_MODE=complex
+APP_LANGUAGE=en
+APP_TZ=Asia/Jakarta
+
 APP_HOST=localhost
 APP_PORT= 3000
-APP_LANGUAGE=en
 APP_VERSIONING=false
 APP_DEBUG=false
-APP_TZ=Asia/Jakarta
 
 DATABASE_HOST=mongodb://localhost:27017
 DATABASE_NAME=ack
@@ -85,14 +85,15 @@ Description for every environment variable
 
 | Key | Type | Value | Description |
 | ---- | ---- | ---- | ---- |
-| APP\_NAME_ | `string` | String | Name of our app. |
-| APP\_ENV | `string` | <ul><li>production</li><li>development</li><li>testing</li></ul> | Application environment, please read [Getting Started Section](/getting-started/readme) for to know difference between value. |
+| APP\_NAME | `string` | String | Name of our app. |
+| APP\_ENV | `string` | <ul><li>production</li><li>development</li></ul> | Application environment, please read [Getting Started Section](/getting-started/readme) for to know difference between value. |
+| APP\_MODE | `string` | <ul><li>complex</li><li>simple</li></ul> | App mode. |
+| APP\_LANGUAGE | `string` | Enum languages | Default language, we can see enum in [Usage Documentation Section Centralize language and Message.](/documentation/language) |
+| APP\_TZ | `string` | Timezone name | `Set default timezone` for our app. |
 | APP\_HOST | `string` | localhost or correct ip | Address that serve our app. |
 | APP\_PORT | `number` | Available port in our system | Port that serve our app. |
-| APP\_LANGUAGE | `string` | Enum languages | Default language, we can see enum in [Usage Documentation Section Centralize language and Message.](/documentation/language) |
 | APP\_VERSIONING | `boolean` | Boolean value | If `true`, our url will replace from `api/` to `/api/v1/` |
 | APP\_DEBUG | `boolean` | Boolean value | If true, `Debugger Module` and `Http Debugger Module` will write into file. |
-| APP\_TZ | `string` | Timezone name | `Set default timezone` for our app. |
 
 #### **Database Environment**
 

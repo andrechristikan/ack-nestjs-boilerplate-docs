@@ -48,12 +48,14 @@ Then adjust.
 ```txt
 APP_NAME=ack
 APP_ENV=development
+APP_MODE=simple
+APP_LANGUAGE=en
+APP_TZ=Asia/Jakarta
+
 APP_HOST=0.0.0.0
 APP_PORT= 3000
-APP_LANGUAGE=en
 APP_VERSIONING=false
 APP_DEBUG=false
-APP_TZ=Asia/Jakarta
 
 DATABASE_HOST=mongodb://mongodb:27017
 DATABASE_NAME=ack

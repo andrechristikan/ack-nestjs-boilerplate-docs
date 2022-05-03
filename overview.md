@@ -9,12 +9,14 @@ Made with following
 
 ## Important
 
-Now ack-nestjs-boilerplate-mongoose have `required` request headers.
+If you change env value of `APP_MODE` to `complex` that will trigger more validation.
 
 1. `x-timestamp`, tolerant 5 minutes of request.
 2. `user-agent`, whitelist of user agent.
+3. `x-api-key`, check api key.
+4. check cors origin
 
-You can see our `e2e testing file`.
+You can see our `e2e testing file` or read the documentation on [section environment](/documentation/readme.md).
 
 ## Build with
 
@@ -48,19 +50,21 @@ ack-nestjs-boilerplate-mongoose have some objective.
 - NestJs v8.x 🥳
 - Typescript 🚀
 - Authentication and Authorization (OAuth2, API Key, Basic Auth) 💪
-- Integrate with Mongodb by using Mongoose Package 🎉
+- Mongodb integrate by using Mongoose Package 🎉
 - Database Migration
 - Integrate with AWS
 - Server Side Pagination
 - Url Versioning
 - Request Validation Pipe
+- Custom error status code 🤫
 - Logger and Debugger 📝
 - Centralize Configuration 🤖
 - Centralize Exception Filter
 - Multi-language (i18n)
 - Support Docker Installation
 - Support CI/CD with Github Action or Jenkins
-- Husky GitHook For Check Source Code Before Commit 🐶
+- Husky GitHook For Check Source Code, and Run Test Before Commit 🐶
+- Linter with EsLint for Typescript
 
 ## Prerequisites
 
