@@ -2,7 +2,7 @@
 
 # ACK Boilerplate Documentation
 
-> Best uses for RESTFUL API, [Microservice](https://microservices.io), or SaaS Project
+> Best uses for Restful API, Microservice, or SaaS Project
 
 - Simple, scalable and secure
 - Avoid spaghetti code

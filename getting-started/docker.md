@@ -80,6 +80,8 @@ For detail information about environment, please read this section below
 
 ## Run Project
 
+> If mongodb version < 5, [please read section for adjust mongoose setting.](/getting-started/adjust-mongoose-setting)
+
 Run project docker compose.
 
 ```bash

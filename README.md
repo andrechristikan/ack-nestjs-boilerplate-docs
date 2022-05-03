@@ -1,6 +1,6 @@
 # Welcome
 
-> Best uses for RESTFUL API, [Microservice](https://microservices.io), or SaaS Project
+> Best uses for Restful API, [Microservice](https://microservices.io), or SaaS Project
 
 Welcome to ACK Boilerplate Documentation. This documentation is for [ack-nestjs-boilerplate-mongoose][ack-repo] and [ack-microservice-nestjs-boilerplate-mongoose][ack-microservice-repo].
 

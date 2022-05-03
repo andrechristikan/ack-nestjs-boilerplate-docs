@@ -194,6 +194,8 @@ The scenario is `delete our user`.
 
 ## Migration
 
+!> Only for initial purpose
+
 ack-nestjs-boilerplate-mongoose use `nestjs-command` package.
 
 Example migrate permission.

@@ -1,6 +1,4 @@
 - [Overview](/overview)
-- [Todo](/todo)
-- [Features](/features)
 - Getting Started
     - [Installation](/getting-started/readme)
     - [Docker](/getting-started/docker)

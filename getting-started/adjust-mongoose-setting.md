@@ -1,6 +1,6 @@
 # Adjust Mongoose Setting
 
-!> Just is case, if you mongodb version is < 5
+> Just is case, if you mongodb version is < 5
 
 Go to file `src/database/database.service.ts` and add `useMongoClient` then set value to `true`.
 

@@ -1,5 +1,9 @@
 # Authentication
 
+List of authentication
+
+## OAuth2
+
 [OAuth 2.0](https://oauth.net/2/) is the industry-standard protocol for authorization. This is used to describe the user. ack-nestjs-boilerplate-mongoose combine between `@nestjs/jwt` and `@nestjs/passport` to implement `OAuth2`.
 
 The config of access token will be put in `src/config/auth.config.ts`
@@ -39,7 +43,7 @@ export default registerAs(
 );
 ```
 
-## Access Token
+### Access Token
 
 > Access token create in `login endpoint` or `refresh endpoint`
 
@@ -54,11 +58,11 @@ These guards will check based on `payload user`.
 5. password_expired of user
 6. is_admin or not
 
-### AuthPublicJwtGuard
+#### AuthPublicJwtGuard
 
 > is_admin is false
 
-#### Usage
+##### Usage
 
 Get profile user with `AuthPublicJwtGuard` as a guard
 
@@ -71,11 +75,11 @@ async profile(@GetUser() user: IUserDocument): Promise<IResponse> {
 }
 ```
 
-### AuthAdminJwtGuard
+#### AuthAdminJwtGuard
 
 > is_admin is true
 
-#### Usage
+##### Usage
 
 Get user endpoint with `AuthAdminJwtGuard` as a guard
 
@@ -88,7 +92,7 @@ async get(): Promise<string> {
 }
 ```
 
-## Refresh Token
+### Refresh Token
 
 > Refresh token create in `login endpoint` or `refresh endpoint`
 
@@ -96,7 +100,7 @@ The refresh token can be used after the access token has expired or `30 minutes 
 
 Refresh token will check if we use `AuthRefreshJwtGuard`
 
-### Usage
+#### Usage
 
 ```typescript
 @Response('auth.refresh')
@@ -111,3 +115,11 @@ async refresh(){
     return 'data';
 }
 ```
+
+## API Key
+
+In development
+
+## Basic Token
+
+In development

@@ -85,7 +85,7 @@ Description for every environment variable
 
 | Key | Type | Value | Description |
 | ---- | ---- | ---- | ---- |
-| APP\_NAME_ | `string` | name of our app. |
+| APP\_NAME_ | `string` | String | Name of our app. |
 | APP\_ENV | `string` | <ul><li>production</li><li>development</li><li>testing</li></ul> | Application environment, please read [Getting Started Section](/getting-started/readme) for to know difference between value. |
 | APP\_HOST | `string` | localhost or correct ip | Address that serve our app. |
 | APP\_PORT | `number` | Available port in our system | Port that serve our app. |

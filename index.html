@@ -80,8 +80,8 @@
       // path
       relativePath: false,
       alias: {
-          // '/(.*)': 'https://andrechristikan.github.io/ack-nestjs-boilerplate-docs/$1',
-          '/(.*)': '/#',
+          '/(.*)': 'https://andrechristikan.github.io/ack-nestjs-boilerplate-docs/$1',
+          // '/#': '/',
           '/.*/_navbar.md': '/_navbar.md',
           '/.*/_sidebar.md': '/_sidebar.md',
       },
@@ -122,6 +122,7 @@
           data: function(){
             return {
               baseUrl: '/ack-nestjs-boilerplate-docs'
+              // baseUrl: ''
             }
           }
         },
