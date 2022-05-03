@@ -89,7 +89,7 @@ Description for every environment variable
 | APP\_ENV | `string` | <ul><li>production</li><li>development</li><li>testing</li></ul> | Application environment, please read [Getting Started Section](/getting-started/readme) for to know difference between value. |
 | APP\_HOST | `string` | localhost or correct ip | Address that serve our app. |
 | APP\_PORT | `number` | Available port in our system | Port that serve our app. |
-| APP\_LANGUAGE | `string` | Enum languages | Default language, we can see enum in [Usage Documentation Section Centralize language and Message.](/features/language) |
+| APP\_LANGUAGE | `string` | Enum languages | Default language, we can see enum in [Usage Documentation Section Centralize language and Message.](/documentation/language) |
 | APP\_VERSIONING | `boolean` | Boolean value | If `true`, our url will replace from `api/` to `/api/v1/` |
 | APP\_DEBUG | `boolean` | Boolean value | If true, `Debugger Module` and `Http Debugger Module` will write into file. |
 | APP\_TZ | `string` | Timezone name | `Set default timezone` for our app. |

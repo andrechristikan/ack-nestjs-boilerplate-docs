@@ -127,9 +127,11 @@ For detailed information about the environment, please read this section below
 
 ## Database
 
-!> If you want to to implement `transaction`, you must to install `Mongodb instance with replication set`.
+!> If you want to to implement `transaction`, you must to install `Mongodb Replication Set`.
 
-First, create database `ack` from our App.
+First, you need to run `mongodb`. There are have so many options, you can do by your self with search on google.
+
+Then, create database `ack` from our App.
 If you don't know how to create mongodb database, [please follow official mongodb instructions](https://www.mongodb.com/basics/create-database).
 
 ### Database Migration

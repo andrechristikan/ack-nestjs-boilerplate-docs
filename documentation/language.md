@@ -58,8 +58,8 @@ export class BaseModule {}
 
 We can use `MessageModule` with 3 ways.
 
-* [Response Decorator](/features/response?id=response-decorator) or [@Response Paging Decorator](/features/response?id=response-paging-decorator)
-* [ErrorHttpFilter](/features/exception)
+* [Response Decorator](/documentation/response?id=response-decorator) or [@Response Paging Decorator](/documentation/response?id=response-paging-decorator)
+* [ErrorHttpFilter](/documentation/exception)
 * [Direct](#direct)
 
 ### Response Decorator or Response Paging Decorator
@@ -82,7 +82,7 @@ export class TestingController {
 }
 ```
 
-<button-jump-to name="Jump To Features Section Response" link="/#/features/response"></button-jump-to>
+<button-jump-to name="Jump To Features Section Response" link="/#/documentation/response"></button-jump-to>
 
 ### Error Http Filter
 
@@ -107,7 +107,7 @@ export class TestingController {
 }
 ```
 
-<button-jump-to name="Jump To Features Section Exception" link="/#/features/exception"></button-jump-to>
+<button-jump-to name="Jump To Features Section Exception" link="/#/documentation/exception"></button-jump-to>
 
 ### Direct
 

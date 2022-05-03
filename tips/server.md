@@ -87,13 +87,13 @@ FROM node:lts-alpine as main
 
 ## CI / CD
 
-If we have multiple applications, it will take a long time to update, test, and deploy each one (to staging and production). `As a result, we strongly recommend using CI/CD.`
+If we have multiple applications, it will take a long time to update, test, and deploy each one (to staging and also production too). `As a result, we strongly recommend using CI/CD.`
 
 What is CI/CD? you can read and search advantage in google. Go ahead.
 
 > Keyword: `Advantage of CI-CD`
 
-The popular tool that we choose is `Github Action` or `Jenkins`. You can choose what ever you want. Our recommendation to use `Github Action`.
+The popular tool that we choose is `Github Action` or `Jenkins`. You can choose what ever you want. Our recommendation to use `Github Action if you have some $` or `Jenkins for free`.
 
 ### Github Action
 
@@ -101,25 +101,27 @@ We provide CI, CD, and others automation script in separate file.
 
 > Location in `.github/workflows/*`.
 
-You can adjust some `environment` and `secret` with change directly or from `account settings` or `organization settings`.
+You can adjust some `environment`, and `secret` with change directly or from `account settings` or `organization settings`. Ahh! forgot something, do not forget to adjust `triggers` too.
 
 #### Github Description
+
+> Location dir in `.github/workflows/*`
 
 Description of what github workflow do per-files.
 
 | File          | Description                                          |
 | ------------- | ---------------------------------------------------- |
 | cd.yml        | Deploy our docker image into server target           |
-| ci.yml        | Create production image and push into docker hub     |
+| ci.yml        | Create image and push into docker hub     |
 | linter.yml    | Check linter                                         |
 | release.yml   | Release base on version from `package.json` file     |
 | test.yml      | Automation Unit Test, Integration Test, and E2E Test |
 
 ### Jenkins Pipeline
 
-We already provide a Jenkins script pipeline that can use for production, that is already combined with `Docker` and `Automation Test`
-
 > Location dir in `prod/jenkis`
+
+We already provide a Jenkins script pipeline that can use for production, that is already combined with `Docker` and `Automation Test`
 
 How to adjust that pipeline script? Don't change or remove code in `stage`. We only need to change the value in `environment`
 

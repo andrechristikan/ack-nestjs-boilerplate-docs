@@ -76,7 +76,7 @@ AWS_S3_BUCKET=acks3
 
 For detail information about environment, please read this section below
 
-<button-jump-to name="Jump To Features" link="/#/features/readme"></button-jump-to>
+<button-jump-to name="Jump To Features" link="/#/documentation/readme"></button-jump-to>
 
 ## Run Project
 
