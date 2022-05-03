@@ -95,12 +95,14 @@ Then Adjust.
 ```txt
 APP_NAME=ack
 APP_ENV=development
-APP_HOST=localhost
-APP_PORT= 3000
+APP_MODE=simple
 APP_LANGUAGE=en
+APP_TZ=Asia/Jakarta
+
+APP_HOST=0.0.0.0
+APP_PORT= 3000
 APP_VERSIONING=false
 APP_DEBUG=false
-APP_TZ=Asia/Jakarta
 
 DATABASE_HOST=mongodb://localhost:27017
 DATABASE_NAME=ack
@@ -127,9 +129,11 @@ For detailed information about the environment, please read this section below
 
 ## Database
 
-!> If you want to to implement `transaction`, you must to install `Mongodb instance with replication set`.
+!> If you want to to implement `transaction`, you must to install `Mongodb Replication Set`.
 
-First, create database `ack` from our App.
+First, you need to run `mongodb`. There are have so many options, you can do by your self with search on google.
+
+Then, create database `ack` from our App.
 If you don't know how to create mongodb database, [please follow official mongodb instructions](https://www.mongodb.com/basics/create-database).
 
 ### Database Migration

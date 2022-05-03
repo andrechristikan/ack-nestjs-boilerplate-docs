@@ -1,5 +1,5 @@
 
-# Exception
+# Exception Filter
 
 > Store as global module
 
@@ -128,7 +128,7 @@ throw new BadRequestException({
 
 ### With properties
 
-<button-jump-to name="Jump To Features Section Language" link="/#/features/language?id=usage-with-properties"></button-jump-to>
+<button-jump-to name="Jump To Features Section Language" link="/#/documentation/language?id=usage-with-properties"></button-jump-to>
 
 ### Custom status code
 

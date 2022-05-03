@@ -1,4 +1,4 @@
-# Response
+# Response Interceptor
 
 To restructure the success response ack-nestjs-boilerplate-mongoose consumes `interceptor` from `@nestjs/common` and wraps it in the decorator. Location in `src/utils/response/interceptor/*`.
 

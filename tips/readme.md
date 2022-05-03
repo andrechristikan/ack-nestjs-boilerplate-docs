@@ -34,13 +34,15 @@ export function RequestParamGuard(classValidation: ClassConstructor<any>): any {
 }
 ```
 
+<button-jump-to name="Jump To Request Validation" link="/#/request-validation"></button-jump-to>
+
 ## Abstract Class Pagination
 
 Always implement abstract class for pagination
 
-## Independent Service
+## Avoid Circular Dependency
 
-Make sure that we create service as a stand-alone. This means that the service does not require any additional services.
+Make sure that we create service as independent. This means that the service does not require any additional services.
 Let us make inheritance between services into the controller. Take a look at ack-nestjs-boilerplate-mongoose, for example.
 
 ## Response Type
@@ -67,10 +69,13 @@ export class TestingController {
 
 Guard can also be used as a form of validation. We can reuse our validation with other modules using guard.
 
-`User not found validation` is used in each endpoint with the '/: id' parameter. 
-Assume we have 5 endpoints and need to write 5 'User not found validation' for each one. When we need to change, we must change 5 validation, which will be difficult and time-consuming.
+Assume we have 5 endpoints and need to write 5 `User not found validation` for each one. When we need to change, we must change 5 validation, which will be difficult and time-consuming.
 
-But what if we wrapped the `User not found validation` in Guard? If there is a new endpoint, we simply use that guard. Isn't it simple?
+But what if we wrapped the `User not found validation` in Guard ?
+If there is a new endpoint, we simply use that guard. 
+Isn't it simple? 😬
+
+> Guard must in correct
 
 ```typescript
 // User not found validation with guard

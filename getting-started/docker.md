@@ -48,12 +48,14 @@ Then adjust.
 ```txt
 APP_NAME=ack
 APP_ENV=development
+APP_MODE=simple
+APP_LANGUAGE=en
+APP_TZ=Asia/Jakarta
+
 APP_HOST=0.0.0.0
 APP_PORT= 3000
-APP_LANGUAGE=en
 APP_VERSIONING=false
 APP_DEBUG=false
-APP_TZ=Asia/Jakarta
 
 DATABASE_HOST=mongodb://mongodb:27017
 DATABASE_NAME=ack
@@ -76,9 +78,11 @@ AWS_S3_BUCKET=acks3
 
 For detail information about environment, please read this section below
 
-<button-jump-to name="Jump To Features" link="/#/features/readme"></button-jump-to>
+<button-jump-to name="Jump To Features" link="/#/documentation/readme"></button-jump-to>
 
 ## Run Project
+
+> If mongodb version < 5, [please read section for adjust mongoose setting.](/getting-started/adjust-mongoose-setting)
 
 Run project docker compose.
 
