@@ -26,7 +26,9 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 
 ## APP_MODE
 
-### COMPLEX
+### Secure
+
+> value `secure`
 
 * Cors `origin` will allow setting on `src/config/config.middleware.ts`.
 * Timestamp middleware on.
@@ -34,6 +36,8 @@ By default, ack-nestjs-boilerplate-mongoose has 2 `Environment values`
 * API Key Guard on.
 
 ### SIMPLE
+
+> value `simple`
 
 * Cors `origin` will always set to `*`.
 * Timestamp middleware off.
@@ -47,7 +51,7 @@ Environment location `.env.example`. By default, the environment will look like 
 ```txt
 APP_NAME=ack
 APP_ENV=development
-APP_MODE=complex
+APP_MODE=simple
 APP_LANGUAGE=en
 APP_TZ=Asia/Jakarta
 
@@ -87,7 +91,7 @@ Description for every environment variable
 | ---- | ---- | ---- | ---- |
 | APP\_NAME | `string` | String | Name of our app. |
 | APP\_ENV | `string` | <ul><li>production</li><li>development</li></ul> | Application environment, please read [Getting Started Section](/getting-started/readme) for to know difference between value. |
-| APP\_MODE | `string` | <ul><li>complex</li><li>simple</li></ul> | App mode. |
+| APP\_MODE | `string` | <ul><li>secure</li><li>simple</li></ul> | App mode. |
 | APP\_LANGUAGE | `string` | Enum languages | Default language, we can see enum in [Usage Documentation Section Centralize language and Message.](/documentation/language) |
 | APP\_TZ | `string` | Timezone name | `Set default timezone` for our app. |
 | APP\_HOST | `string` | localhost or correct ip | Address that serve our app. |

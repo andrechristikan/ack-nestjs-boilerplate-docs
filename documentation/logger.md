@@ -52,7 +52,7 @@ export class DebuggerController {
             'description debugger', 
             'class', 
             'function', 
-            {data}
+            data
         );
 
         return;
@@ -79,11 +79,15 @@ export class LoggerController {
 
     @Response('logger')
     @Post('/logger')
-    async logger(): Promise<void> {
+    async logger(
+        @User() user: Record<string,any>, 
+        @ApiKey() apiKey: IAuthApiPayload
+    ): Promise<void> {
         await this.loggerService.info({
             action: ENUM_LOGGER_ACTION.LOGGER,
             description: `${user._id} do test logger`,
             user: user._id,
+            apiKey: apiKey._id,
             tags: ['logger', 'test'],
         });
 

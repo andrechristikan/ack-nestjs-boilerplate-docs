@@ -138,44 +138,35 @@ This guards will check based on `x-api-key` in request header.
 
 ### Usage
 
-If the `APP_MODE` is `complex` and `*JwtGuard` is use on Guard some API, that will auto include.
+> Store as global module
 
-```typescript
-export function AuthJwtGuard(): any {
-    return applyDecorators(
-        UseGuards(
-            ApiKeyGuard, // <--- here
-            JwtGuard, 
-            AuthPayloadDefaultGuard
-        )
-    );
-}
-```
+If the `APP_MODE` is `secure` that will auto include.
 
 ### Encryption Data
 
-> Make sure you has run `yarn migrate` to migrate the api key into database
+> Make sure you has run `yarn migrate` to migrate the api key data into database
 
-1. Create data object base in `IAuthApiRequestHashedData` interface. The timestamp value must same with `x-timestamp`. Also the schema of object must be same with interface.
+1. Create data object base in `IAuthApiRequestHashedData` interface. The timestamp value must same with `x-timestamp`. Also the schema of object must be same with interface too.
 
 ```typescript
 const timestamp = helperDateService.timestamp(); // 1651607972429
-const data = {
-    "key": "qwertyuiop12345zxcvbnmkjh",
+const data: IAuthApiRequestHashedData = {
+    "key": "qwertyuiop12345zxcvbnmkjh", // <--- example from migration
     "timestamp": 1651607972429,
-    "secret": "5124512412412asdasdasdasdasdASDASDASD",
+    "secret": "5124512412412asdasdasdasdasdASDASDASD", // <--- example from migration
     "hash": "e11a023bc0ccf713cb50de9baa5140e59d3d4c52ec8952d9ca60326e040eda54",
 }
 ```
 
-2. Encryption the data. You can find `passphrase` value in database on `authapis` collection.
+2. Encryption the data. You can find `passphrase` value in database on `authapis` collection. The passphrase will difference between apiKey. 
+
+> The encryption use `AES 256`.
 
 ```typescript
 const passphrase = 'cuwakimacojulawu';
 const apiKeyEncryption = await authApiService.encryptApiKey(
     data,
     passphrase
-
 );
 ```
 
@@ -183,6 +174,7 @@ const apiKeyEncryption = await authApiService.encryptApiKey(
 
 ```typescript
 const xApiKey = `${apiKey}:${apiEncryption}`;
+// qwertyuiop12345zxcvbnmkjh:L0S5b2z9W7FIjie3NICQ+PR4CHsWzfPEv+dBsdTInMMbwb4ZdY6WpKN5/tMX7bRKavRC1ItJOorCNOmcHnqL7ivTf+mXUWdPgwFSaSuPlvRqJ/pqyZtiRq47pR6Cmc65LY1tgL9GzTPp3K5nIWmtCL7lFWfRgG3CVU6o9Dd/T8SwVDxsHWT4ul/qu2UNztkfp3x2cEFE0mlWOLBqEsnWfEvS9vCuL6aX/chjU+2Iqu8cOvLAdw0a9A==
 ```
 
 4. Then put the `xApiKey` in request headers
@@ -199,6 +191,23 @@ const xApiKey = `${apiKey}:${apiEncryption}`;
 }
 ```
 
+5. To get the apiKey we can use `ApiKey Decorator`
+
+```typescript
+@Response('auth.refresh')
+@HttpCode(HttpStatus.OK)
+@Post('/refresh')
+async refresh(
+        @ApiKey() apiKey: IAuthApiPayload // <--- use this decorator
+    ){
+    ...
+    ...
+    ...
+
+    return apiKey;
+}
+```
+
 ### Interface
 
 ```typescript
@@ -209,7 +218,6 @@ export interface IAuthApiRequestHashedData {
     hash: string;
 }
 ```
-
 
 ## Basic Token
 

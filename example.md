@@ -1,7 +1,5 @@
 # Example
 
-- Test Simple API
-- Simple CRUD
 - [Server Side Pagination](/documentation/pagination)
 - [Request Validation](/documentation/request-validation)
 - [Logger](/documentation/logger) or [Debugger](/documentation/logger)
@@ -12,8 +10,10 @@
 - [Mongoose Population](/documentation/database) and [Deep Population](/documentation/database)
 - [Mongoose Transaction](/documentation/database)
 - Upload Image or File to AWS S3
+- Test / Hello API
 - Login
 - Sign Up
+- CRUD
 - Swagger
 - etc.
 

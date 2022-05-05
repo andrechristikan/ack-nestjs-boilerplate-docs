@@ -13,7 +13,7 @@ src
 
 ## Background
 
-Why do we use RouterModule instead of just using the controller prefix? 
+Why do we use RouterModule instead of just using the controller prefix?
 In some cases, the controller prefix is unable to resolve prefix issues for the complex path. [You can read this article for more information](https://docs.nestjs.com/recipes/router-module)
 
 ## Example
