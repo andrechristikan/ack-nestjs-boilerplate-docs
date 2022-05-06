@@ -60,6 +60,9 @@ APP_PORT= 3000
 APP_VERSIONING=false
 APP_DEBUG=false
 
+APP_HTTP_ON=true
+APP_TASK_ON=false
+
 DATABASE_HOST=mongodb://localhost:27017
 DATABASE_NAME=ack
 DATABASE_USER=
@@ -98,6 +101,8 @@ Description for every environment variable
 | APP\_PORT | `number` | Available port in our system | Port that serve our app. |
 | APP\_VERSIONING | `boolean` | Boolean value | If `true`, our url will replace from `api/` to `/api/v1/` |
 | APP\_DEBUG | `boolean` | Boolean value | If true, `Debugger Module` and `Http Debugger Module` will write into file. |
+| APP\_HTTP\_ON | `boolean` | Boolean value | If true, `AppRouterModule` will import to `AppModule`. |
+| APP\_TASK\_ON | `boolean` | Boolean value | If true, `TaskModule` will import to `AppModule` will write into file. |
 
 #### **Database Environment**
 
