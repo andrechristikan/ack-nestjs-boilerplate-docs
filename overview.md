@@ -61,6 +61,9 @@ ack-nestjs-boilerplate-mongoose have some objective.
 - Centralize Configuration 🤖
 - Centralize Exception Filter
 - Multi-language (i18n)
+- Dynamic Setting from Database 🗿
+- Maintenance Mode on / off
+- Support Docker Installation
 - Support Docker Installation
 - Support CI/CD with Github Action or Jenkins
 - Husky GitHook For Check Source Code, and Run Test Before Commit 🐶

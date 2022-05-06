@@ -18,6 +18,7 @@
     - [Authentication](/documentation/authentication)
     - [Authorization](/documentation/authorization)
     - [Logger](/documentation/logger)
+    - [Dynamic Setting](/documentation/dynamic-setting)
 - [Microservice](/microservice/readme)
 - [Example](example)
 - Tips
