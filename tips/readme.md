@@ -2,15 +2,6 @@
 
 Tips for use ack-nestjs-boilerplate-mongoose.
 
-## Incoming Request
-
-Now ack-nestjs-boilerplate-mongoose have `required` request headers.
-
-1. `x-timestamp`, tolerant 5 minutes of request.
-2. `user-agent`, whitelist of user agent.
-
-You can see our `e2e testing file`.
-
 ## Decorator Ordering
 
 We recognize that our decorator occasionally causes the app to malfunction. So, to resolve that issue, you can use the following suggestions.
@@ -19,6 +10,7 @@ We recognize that our decorator occasionally causes the app to malfunction. So, 
 @Response()
 @UserDeleteGuard()
 @RequestParamGuard()
+@AuthExcludeApiKey()
 @AuthAdminJwtGuard()
 @HttpCode()
 @Post()
