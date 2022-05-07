@@ -208,6 +208,28 @@ async refresh(
 }
 ```
 
+### Exclude API KEY
+
+Simply, in controller use `AuthExcludeApiKey`
+
+```typescript
+@Controller({
+    version: VERSION_NEUTRAL,
+})
+export class TestingCommonController {
+    @Response('test.hello')
+    @AuthExcludeApiKey() // <--- add this in controller level
+    @Get('/hello')
+    async hello(
+        @UserAgent() userAgent: IResult,
+        @ApiKey() apiKey: IAuthApiPayload
+    ): Promise<IResponse> {
+        return { userAgent, apiKey };
+    }
+}
+
+```
+
 ### Interface
 
 ```typescript
