@@ -227,7 +227,6 @@ export class TestingCommonController {
         return { userAgent, apiKey };
     }
 }
-
 ```
 
 ### Interface

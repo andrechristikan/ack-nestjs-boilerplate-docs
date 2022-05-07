@@ -19,6 +19,7 @@
     - [Authorization](/documentation/authorization)
     - [Logger](/documentation/logger)
     - [Dynamic Setting](/documentation/dynamic-setting)
+    - [Callback Endpoint](/documentation/callback-endpoint)
 - [Microservice](/microservice/readme)
 - [Example](example)
 - Tips
