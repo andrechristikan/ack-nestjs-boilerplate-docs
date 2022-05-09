@@ -150,10 +150,10 @@ If the `APP_MODE` is `secure` that will auto include.
 
 ```typescript
 const timestamp = helperDateService.timestamp(); // 1651607972429
+// secret 5124512412412asdasdasdasdasdASDASDASD
 const data: IAuthApiRequestHashedData = {
     "key": "qwertyuiop12345zxcvbnmkjh", // <--- example from migration
     "timestamp": 1651607972429,
-    "secret": "5124512412412asdasdasdasdasdASDASDASD", // <--- example from migration
     "hash": "e11a023bc0ccf713cb50de9baa5140e59d3d4c52ec8952d9ca60326e040eda54",
 }
 ```
@@ -163,18 +163,24 @@ const data: IAuthApiRequestHashedData = {
 > The encryption use `AES 256`.
 
 ```typescript
-const passphrase = 'cuwakimacojulawu';
+const passphrase = 'cuwakimacojulawu'; // <--- IV for encrypt AES 256
 const apiKeyEncryption = await authApiService.encryptApiKey(
     data,
     passphrase
 );
 ```
 
+Steps `encryptApiKey` do
+
+- make the `data` into `string`
+- encryption with `aes-256`
+- convert `encrypted data string` into `hex` string
+- result `apiKeyEncryption`
+
 3. Combine the `data.key` and `apiKeyEncryption`
 
 ```typescript
 const xApiKey = `${apiKey}:${apiEncryption}`;
-// qwertyuiop12345zxcvbnmkjh:L0S5b2z9W7FIjie3NICQ+PR4CHsWzfPEv+dBsdTInMMbwb4ZdY6WpKN5/tMX7bRKavRC1ItJOorCNOmcHnqL7ivTf+mXUWdPgwFSaSuPlvRqJ/pqyZtiRq47pR6Cmc65LY1tgL9GzTPp3K5nIWmtCL7lFWfRgG3CVU6o9Dd/T8SwVDxsHWT4ul/qu2UNztkfp3x2cEFE0mlWOLBqEsnWfEvS9vCuL6aX/chjU+2Iqu8cOvLAdw0a9A==
 ```
 
 4. Then put the `xApiKey` in request headers
@@ -235,7 +241,6 @@ export class TestingCommonController {
 export interface IAuthApiRequestHashedData {
     key: string;
     timestamp: number;
-    secret: string;
     hash: string;
 }
 ```
