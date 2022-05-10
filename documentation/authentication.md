@@ -118,72 +118,85 @@ async refresh(){
 
 ## API Key
 
-> Location in `src/auth/guard/api-key/*`
+> Store as global module
 
 API is important for our app. This can help we to make our app more secure, control the traffic, filter log, and dst.
 [More information you can read this reference](https://cloud.google.com/endpoints/docs/openapi/when-why-api-key) and [two article](https://stackoverflow.com/questions/21465559/restrict-api-requests-to-only-my-own-mobile-app)
 
 ack-nestjs-boilerplate-mongoose provide `ApiKeyGuard` for check `x-api-key` on request header is recorded or not in our database.
 
-> `x-api-key` is string of `key` and `encryption data`.
+> Location in `src/auth/guard/api-key/*`
 
 This guards will check based on `x-api-key` in request header.
 
 1. `x-api-key` is empty or not
-2. Is schema (before encryption) is correct or not
-3. Is timestamp in data match with `x-timestamp` or not
-4. Check API Key in database
-5. IsActive of API Key
+2. `IsActive` of API Key
+3. Same schema is correct or not / this will check the decryption is correct or not too
+4. Is `key` and `data.key` same (`data.key` is part of `IAuthApiRequestHashedData`)
+5. Is timestamp in data match with `x-timestamp` or not
 6. Valid API Key
 
 ### Usage
 
-> Store as global module
-
-If the `APP_MODE` is `secure` that will auto include.
-
-### Encryption Data
-
 > Make sure you has run `yarn migrate` to migrate the api key data into database
 
-1. Create data object base in `IAuthApiRequestHashedData` interface. The timestamp value must same with `x-timestamp`. Also the schema of object must be same with interface too.
+If the `APP_MODE` is `secure` that will auto include the `ApiKeyGuard`.
+
+#### Encryption Data
+
+1. Hash use `sha256`. Hash the `key` and `secret`.
+
+!> `secret` should be kept private.
 
 ```typescript
-const timestamp = helperDateService.timestamp(); // 1651607972429
-// secret 5124512412412asdasdasdasdasdASDASDASD
+const hash = this.helperHashService.sha256(`${key}:${secret}`);
+// e11a023bc0ccf713cb50de9baa5140e59d3d4c52ec8952d9ca60326e040eda54
+```
+
+Steps `sha256` function do
+
+- hash with `sha-256`
+- convert `encrypted data string` into `hex` string
+
+2. Create data object base on `IAuthApiRequestHashedData` interface. Make sure the timestamp value must same with `x-timestamp` value header.
+
+```typescript
+const timestamp = helperDateService.timestamp(); 
+// timestamp 1651607972429
 const data: IAuthApiRequestHashedData = {
     "key": "qwertyuiop12345zxcvbnmkjh", // <--- example from migration
-    "timestamp": 1651607972429,
-    "hash": "e11a023bc0ccf713cb50de9baa5140e59d3d4c52ec8952d9ca60326e040eda54",
+    timestamp,
+    hash,
 }
 ```
 
-2. Encryption the data. You can find `passphrase` value in database on `authapis` collection. The passphrase will difference between apiKey. 
+3. Encryption use `AES 256`. We can find `passphrase` and `encryptionKey` value in database on `authapis` collection. The passphrase and encryptionKey will difference between other apiKey.
 
-> The encryption use `AES 256`.
+!> These data `encryptionKey`, and `passphrase` should be kept private.
 
 ```typescript
 const passphrase = 'cuwakimacojulawu'; // <--- IV for encrypt AES 256
+const encryptionKey = 'opbUwdiS1FBsrDUoPgZdx';
 const apiKeyEncryption = await authApiService.encryptApiKey(
     data,
+    encryptionKey,
     passphrase
 );
 ```
 
-Steps `encryptApiKey` do
+Steps `encryptApiKey` function do
 
 - make the `data` into `string`
 - encryption with `aes-256`
 - convert `encrypted data string` into `hex` string
-- result `apiKeyEncryption`
 
-3. Combine the `data.key` and `apiKeyEncryption`
+4. Combine the `key` and `apiKeyEncryption`
 
 ```typescript
 const xApiKey = `${apiKey}:${apiEncryption}`;
 ```
 
-4. Then put the `xApiKey` in request headers
+5. Send request. Put the `xApiKey` in request headers
 
 ```json
 {
@@ -197,7 +210,9 @@ const xApiKey = `${apiKey}:${apiEncryption}`;
 }
 ```
 
-5. To get the apiKey we can use `ApiKey Decorator`
+#### Get API Key
+
+To get the `apiKey`, we can use `ApiKey Decorator`
 
 ```typescript
 @Response('auth.refresh')
@@ -214,7 +229,7 @@ async refresh(
 }
 ```
 
-### Exclude API KEY
+#### Exclude API KEY
 
 Simply, in controller use `AuthExcludeApiKey`
 
@@ -235,7 +250,7 @@ export class TestingCommonController {
 }
 ```
 
-### Interface
+#### Interface
 
 ```typescript
 export interface IAuthApiRequestHashedData {
