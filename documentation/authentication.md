@@ -156,7 +156,7 @@ const hash = this.helperHashService.sha256(`${key}:${secret}`);
 Steps `sha256` function do
 
 - hash with `sha-256`
-- convert `encrypted data string` into `hex` string
+- convert `encrypted data` into `hex`
 
 2. Create data object base on `IAuthApiRequestHashedData` interface. Make sure the timestamp value must same with `x-timestamp` value header.
 
@@ -188,7 +188,7 @@ Steps `encryptApiKey` function do
 
 - make the `data` into `string`
 - encryption with `aes-256`
-- convert `encrypted data string` into `hex` string
+- convert `encrypted data` into format `OpenSSL`
 
 4. Combine the `key` and `apiKeyEncryption`
 
