@@ -3,18 +3,19 @@
 ack-nestjs-boilerplate-mongoose is a [NestJs](http://nestjs.com) Boilerplate with [Mongoose](https://mongoosejs.com) and [MongoDB](https://docs.mongodb.com) as Database.
 
 Made with following
-- [nodejs-best-practice](https://github.com/goldbergyoni/nodebestpractices)
+- [nodejs-best-practice](https://github.com/goldbergyoni/nodebestpractices) 
 - [The Twelve-Factor App](https://12factor.net)
+- [Microservice Architecture](https://microservices.io)
 - NestJs Habit.
 
 ## Important
 
-If you change env value of `APP_MODE` to `complex` that will trigger more validation.
+If you change env value of `APP_MODE` to `secure` that will trigger more `Middleware` and `Guard`.
 
-1. `x-timestamp`, tolerant 5 minutes of request.
-2. `user-agent`, whitelist of user agent.
-3. `x-api-key`, check api key.
-4. check cors origin
+1. `TimestampMiddleware`, tolerant 5 minutes of request.
+2. `UserAgentMiddleware`, whitelist of user agent.
+3. `ApiKeyGuard`, check api key based on database.
+4. `CorsMiddleware`, check cors
 
 You can see our `e2e testing file` or read the documentation on [section environment](/documentation/readme.md).
 
@@ -48,6 +49,7 @@ ack-nestjs-boilerplate-mongoose have some objective.
 ## Features
 
 - NestJs v8.x 🥳
+- Production Ready 🔥
 - Typescript 🚀
 - Authentication and Authorization (OAuth2, API Key, Basic Auth) 💪
 - Mongodb integrate by using Mongoose Package 🎉
@@ -63,7 +65,7 @@ ack-nestjs-boilerplate-mongoose have some objective.
 - Multi-language (i18n)
 - Dynamic Setting from Database 🗿
 - Maintenance Mode on / off
-- Support Docker Installation
+- Advance Example 🥶
 - Support Docker Installation
 - Support CI/CD with Github Action or Jenkins
 - Husky GitHook For Check Source Code, and Run Test Before Commit 🐶
