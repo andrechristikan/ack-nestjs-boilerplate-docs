@@ -255,3 +255,5 @@ Example migrate permission.
     ```sh
     npx nestjs-command insert:permission
     ```
+
+&nbsp;

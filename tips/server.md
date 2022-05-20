@@ -179,3 +179,5 @@ Description of what Jenkins do in every stage
 | Push     | `Build production image` and `push image into docker hub registry` |
 | Deploy   | Deploy image into server target                                |
 | Clean    | Clean unnecessary docker images and containers from server target and server jenkins |
+
+&nbsp;

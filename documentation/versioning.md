@@ -24,3 +24,5 @@ export class UserAdminController {}
 ```
 
 After that, if the environment variable `APP_VERSIONING` is `true` then our URL will look like `v1/admin/user/*`, but if `APP_VERSIONING` is `false` then  our URL look like `admin/user/*`
+
+&nbsp;
