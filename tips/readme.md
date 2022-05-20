@@ -165,3 +165,5 @@ A module that can catch all incoming requests and responses.
 ### Logger Module
 
 The logger module's purpose is to save logs into a database, which will then be used by our data scientist.
+
+&nbsp;

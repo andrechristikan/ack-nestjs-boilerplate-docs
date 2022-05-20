@@ -48,3 +48,5 @@ export enum ENUM_PERMISSIONS {
     PERMISSION_UPDATE = 'PERMISSION_READ',
 }
 ```
+
+&nbsp;
